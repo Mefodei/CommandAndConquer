@@ -1,0 +1,3 @@
+[submodule "Unity/Assets/SubModules"]
+	path = Unity/Assets/SubModules
+	url = https://github.com/Mefodei/UnityTools-Code

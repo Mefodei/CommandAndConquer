@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Name: ConquerGameConfiguration
   m_EditorClassIdentifier: 
   FieldSize: {x: 10, y: 10}
-  CellObject: {fileID: 1662387295582114, guid: da76d64f0aaf4f24d8cb1c27b04099d8, type: 2}
+  CellObject: {fileID: 114075056159570648, guid: da76d64f0aaf4f24d8cb1c27b04099d8,
+    type: 2}

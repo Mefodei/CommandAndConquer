@@ -14,9 +14,9 @@ namespace Assets.Conquer.Scripts.Field
         #region inspector data
 
         [SerializeField]
-        private Vector3 _cellItemsOffset = new Vector3(0f,1f, 0f);
+        private Vector3 _cellItemsOffset = new Vector3(0f, 1f, 0f);
         [SerializeField]
-        private Vector3 _pivotOffset = new Vector3(0.5f,0, 0.5f);
+        private Vector3 _pivotOffset = new Vector3(0.5f, 0, 0.5f);
         [SerializeField]
         private Vector2 _defaultSize = new Vector2(0.1f, 0.1f);
         [SerializeField]
@@ -44,6 +44,8 @@ namespace Assets.Conquer.Scripts.Field
             var cellPosition = cellData.Position;
 
             var index = cellPosition.y * _fieldData.Size.x + cellPosition.x;
+            index = Mathf.Clamp(index, 0, _cellViews.Count - 1);
+
             return _cellViews[index].transform.position + _cellItemsOffset;
 
         }
@@ -70,12 +72,12 @@ namespace Assets.Conquer.Scripts.Field
         {
 
             var size = _fieldData.Size * _defaultSize;
-            _fieldObject.localScale = new Vector3(size.x,_fieldObject.transform.localScale.y, size.y);
+            _fieldObject.localScale = new Vector3(size.x, _fieldObject.transform.localScale.y, size.y);
 
-            for (var i = 0; i < _fieldData.Size.x; i++)
+            for (var j = 0; j < _fieldData.Size.y; j++)
             {
-
-                for (var j = 0; j < _fieldData.Size.y; j++) {
+                for (var i = 0; i < _fieldData.Size.x; i++)
+                {
                     var cell = CreateCell(j, i);
                     _cellViews.Add(cell);
                 }
@@ -89,7 +91,7 @@ namespace Assets.Conquer.Scripts.Field
             var pivotPosition = _pivot.position;
             var size = _fieldData.CellSize;
 
-            var cellPosition =  new Vector3(pivotPosition.x + size.x * column, position.y, pivotPosition.z + size.y * row);
+            var cellPosition = new Vector3(pivotPosition.x + size.x * column, position.y, pivotPosition.z + size.y * row);
             cellPosition += _pivotOffset;
             var cell = Instantiate(_cellObject, cellPosition, Quaternion.identity, transform);
             cell.gameObject.SetActive(true);

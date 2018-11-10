@@ -8,7 +8,7 @@ namespace Assets.Conquer.Scripts.Info
 
         public Vector2Int FieldSize = new Vector2Int(10,10);
 
-        public GameObject CellObject;
+        public CellItemView CellObject;
 
     }
 }

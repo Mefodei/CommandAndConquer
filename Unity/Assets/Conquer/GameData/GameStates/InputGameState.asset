@@ -11,3 +11,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b71cdd0614d03e6488d3abe8c38d61fa, type: 3}
   m_Name: InputGameState
   m_EditorClassIdentifier: 
+  _layerMask:
+    serializedVersion: 2
+    m_Bits: 512

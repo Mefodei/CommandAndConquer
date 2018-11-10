@@ -20,7 +20,10 @@ namespace Assets.Conquer.Scripts.States
             gameModel.State.Value = ConquerState.Input;
 
             gameField.Initialize(gameModel.FieldData);
-            
+
+            var fieldItemFactory = new FieldItemFactory(config.CellObject);
+
+            context.Add((IUniItemFactory<CellItemView>) fieldItemFactory);
             context.Add(gameModel);
 
 

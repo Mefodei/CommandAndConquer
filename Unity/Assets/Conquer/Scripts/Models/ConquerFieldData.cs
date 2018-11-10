@@ -38,10 +38,10 @@ namespace Assets.Conquer.Scripts.Models
                 if (Size == Vector2Int.zero)
                     return DefaultCell;
 
-                if (!column.IsInRange(0,Size.x) || !row.IsInRange(0,Size.y))
-                    return DefaultCell;
-
+                row = Mathf.Clamp(row,0, Size.y - 1);
+                column = Mathf.Clamp(column, 0, Size.x - 1);
                 var index = Size.x * row + column;
+
                 return _cells[index];
 
             }

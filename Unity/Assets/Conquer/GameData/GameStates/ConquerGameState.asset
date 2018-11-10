@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2cde1c94d4d70347a26862d89538126, type: 3}
+  m_Name: ConquerGameState
+  m_EditorClassIdentifier: 
+  _stateSelector: {fileID: 114981980188766166}
+--- !u!114 &114981980188766166
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2a428973150e114abef422c85558a77, type: 3}
+  m_Name: StateSelector
+  m_EditorClassIdentifier: 
+  _selectedTransition: {fileID: 11400000, guid: 39977e02869b8e7448a1e289c9616a02,
+    type: 2}
+  _selectStateBehaviour: {fileID: 11400000, guid: 2baf1e1ab9708c14eb94bb3b0d45c40c,
+    type: 2}
+  _stateNodes:
+  - {fileID: 11400000, guid: 39977e02869b8e7448a1e289c9616a02, type: 2}

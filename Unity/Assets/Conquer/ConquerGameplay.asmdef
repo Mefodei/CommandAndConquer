@@ -1,0 +1,11 @@
+{
+    "name": "ConquerGameplay",
+    "references": [
+        "UnityTools",
+        "UniRx"
+    ],
+    "optionalUnityReferences": [],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false
+}

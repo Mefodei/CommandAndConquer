@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41f0d175ca2557a4696b5afbbef4d396, type: 3}
+  m_Name: InputTransition
+  m_EditorClassIdentifier: 
+  _defaultValidatorValue: 0
+  _validator: {fileID: 11400000, guid: 3a733893c2606e84fa98c4bc3f8d009f, type: 2}
+  _stateBehaviour: {fileID: 11400000, guid: 2baf1e1ab9708c14eb94bb3b0d45c40c, type: 2}

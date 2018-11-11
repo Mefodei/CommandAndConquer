@@ -1,16 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using UniRx;
 using UnityEngine;
 
-public class ConquerStepData : MonoBehaviour {
+public class ConquerStepData
+{
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    public ReactiveProperty<Vector2> ItemSize = new ReactiveProperty<Vector2>(Vector2.zero);
+    
 }

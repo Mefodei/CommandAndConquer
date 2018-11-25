@@ -41,9 +41,12 @@ namespace Assets.Scripts
 
         private void StartGameBehaviour()
         {
-
             GameStateBehaviour.Execute(_context);
+        }
 
+        private void OnDisable()
+        {
+            GameStateBehaviour.Stop();
         }
 
         private void OnDestroy()

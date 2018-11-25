@@ -30,7 +30,7 @@ MonoBehaviour:
   m_Name: Test Log Node
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 376, y: -88}
+  position: {x: 392, y: -200}
   ports:
     keys:
     - InputContext
@@ -79,7 +79,7 @@ MonoBehaviour:
   m_Name: Test Log Node
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -536, y: -104}
+  position: {x: -472, y: -72}
   ports:
     keys:
     - InputContext
@@ -232,7 +232,7 @@ MonoBehaviour:
   m_Name: Test Log Node
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 136, y: -280}
+  position: {x: 72, y: -248}
   ports:
     keys:
     - InputContext

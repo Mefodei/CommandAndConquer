@@ -10,7 +10,8 @@ public class TestLauncher : MonoBehaviour
 	public UniStatesGraph Graph;
 	
 	// Use this for initialization
-	void Start () {
+	void Start () 
+	{
 		Graph.Execute(new EntityObject());
 	}
 

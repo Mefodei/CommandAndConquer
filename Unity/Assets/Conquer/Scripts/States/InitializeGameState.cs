@@ -26,6 +26,7 @@ namespace Conquer.States
             context.Add((IUniItemFactory<CellItemView>) fieldItemFactory);
             context.Add(gameModel);
 
+            OutputContext.Data.SetValue(context);
 
             yield break;
         }

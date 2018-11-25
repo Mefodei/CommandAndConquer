@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Assets.Conquer.Scripts.States
+namespace Conquer.States
 {
 
     [CreateAssetMenu(fileName = "FinishGameState", menuName = "Conquer/States/FinishGameState")]

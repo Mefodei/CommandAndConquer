@@ -3,13 +3,13 @@ using Assets.Conquer.Scripts.Field;
 using Assets.Conquer.Scripts.Info;
 using Assets.Conquer.Scripts.Models;
 using Assets.Tools.UnityTools.Interfaces;
-using Assets.Tools.UnityTools.StateMachine.UniStateMachine;
+using UniStateMachine;
 using UnityEngine;
 
-namespace Assets.Conquer.Scripts.States
+namespace Conquer.States
 {
     [CreateAssetMenu(fileName = "InitializeGameState", menuName = "Conquer/States/InitializeGameState")]
-    public class InitializeGameState : UniStateBehaviour
+    public class InitializeGameState :  UniNode
     {
         protected override IEnumerator ExecuteState(IContext context) {
 

@@ -1,10 +1,10 @@
-﻿using Assets.Tools.UnityTools.StateMachine.UniStateMachine;
+﻿using UniStateMachine;
 using UnityEngine;
 
-namespace Assets.Conquer.Scripts.States
+namespace Conquer.States
 {
     [CreateAssetMenu(fileName = "PlayingGameState", menuName = "Conquer/States/PlayingGameState")]
-    public class PlayingGameState : UniStateBehaviour
+    public class PlayingGameState : UniNode
     {
 
     }

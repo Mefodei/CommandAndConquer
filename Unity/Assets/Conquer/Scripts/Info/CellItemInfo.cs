@@ -1,4 +1,5 @@
 ﻿using Assets.Tools.UnityTools.ActorEntityModel;
+using Assets.Tools.UnityTools.ObjectPool.Scripts;
 using Conquer.Scripts.Field;
 using Conquer.Scripts.Models;
 using UnityEngine;
@@ -10,8 +11,10 @@ namespace Conquer.Scripts.Info
 	{
 		[SerializeField]
 		private int _type;
-		[SerializeField]
+
+	    [SerializeField]
 		private int _size;
+
 		[SerializeField]
 		private CellItemView _view;
 
@@ -20,10 +23,11 @@ namespace Conquer.Scripts.Info
 		public int Size => _size;
 
 		public CellItemView View => _view;
-		
-		public override ActorModel Create()
+        
+        public override ActorModel Create()
 		{
-			var cellModel = new CellItemModel(this);
+			var cellModel = ClassPool.Spawn<CellItemModel>();
+            cellModel.Initialize(this);
 			return cellModel;
 		}
 	}

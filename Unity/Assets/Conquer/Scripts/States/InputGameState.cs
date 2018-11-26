@@ -27,6 +27,7 @@ namespace Conquer.States
             
             while (IsActive(context))
             {
+                yield return null;
 
                 if (Input.GetMouseButton(0))
                 {
@@ -47,7 +48,6 @@ namespace Conquer.States
                     playerModel.IsTurnActive.Value = false;
                 }
 
-                yield return null;
                 
             }
         }

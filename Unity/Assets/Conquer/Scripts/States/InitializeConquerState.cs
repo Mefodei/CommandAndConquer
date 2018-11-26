@@ -10,10 +10,10 @@ using UnityEngine.Serialization;
 namespace Conquer.States
 {
     [CreateAssetMenu(fileName = "InitializeGameState", menuName = "Conquer/States/InitializeGameState")]
-    public class InitializeGameState :  UniNode
+    public class InitializeConquerState :  UniNode
     {
         
-        [FormerlySerializedAs("_info")] [FormerlySerializedAs("_configuration")] [SerializeField]
+        [SerializeField]
         private GameFieldInfo _fieldInfo;
 
         
@@ -27,7 +27,9 @@ namespace Conquer.States
             gameField.Initialize(gameModel.FieldModel);
 
             var playerModel = new ConquerPlayerModel();
-            
+            var fieldCellFactory = new GameFieldCellFactory(_fieldInfo.CellsMap);
+
+            context.Add<IGameFieldCellFactory>(fieldCellFactory);
             context.Add(_fieldInfo);
             context.Add(playerModel);
             context.Add(gameModel);

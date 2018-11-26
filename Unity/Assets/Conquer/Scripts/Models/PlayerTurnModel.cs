@@ -1,4 +1,5 @@
-﻿using UniRx;
+﻿using Assets.Tools.UnityTools.ActorEntityModel;
+using UniRx;
 using UnityEngine;
 
 namespace Conquer.Scripts.Models

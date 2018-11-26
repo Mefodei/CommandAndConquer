@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using Conquer.Scripts.Field;
 using UnityEngine;
 
 namespace Conquer.Scripts.Info
@@ -21,14 +20,14 @@ namespace Conquer.Scripts.Info
 		public IReadOnlyList<CellItemInfo> CellItemInfos => _cellItemInfos;
 
 
-		public CellItemView Create(int type,int area)
+		public ActorModel Create(int type,int area)
 		{
 			if(_cellInfos == null)
 				Initialize();
 
 			var cell = _cellInfos[type].FirstOrDefault(x => x.Size == area);
-
-		    return null;
+		    var model = cell.Create();
+		    return model;
 		}
 
 

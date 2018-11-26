@@ -29,7 +29,7 @@ MonoBehaviour:
   m_Name: Input Game State
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -328, y: -392}
+  position: {x: -312, y: -552}
   ports:
     keys:
     - InputContext
@@ -85,7 +85,7 @@ MonoBehaviour:
   m_Name: Initialize Game State
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -552, y: -440}
+  position: {x: -568, y: -440}
   ports:
     keys:
     - InputContext
@@ -136,7 +136,7 @@ MonoBehaviour:
   m_Name: Select Field Cell State
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 152, y: -376}
+  position: {x: 184, y: -536}
   ports:
     keys:
     - InputContext
@@ -186,7 +186,7 @@ MonoBehaviour:
   m_Name: Update Turn Data State
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -88, y: -376}
+  position: {x: -72, y: -408}
   ports:
     keys:
     - InputContext
@@ -215,7 +215,7 @@ MonoBehaviour:
       _connectionType: 0
       _dynamic: 0
   _routineType: 0
-  _allowRestart: 0
+  _allowRestart: 1
   _validator: {fileID: 0}
   InputContext:
     _validatorData:

@@ -17,7 +17,7 @@ namespace Conquer.States
             var size = turn.ItemSize.Value;
             var area = size.x * size.y;
             
-            var view = map.c
+            //var view = map.c
             
             return base.ExecuteState(context);
         }

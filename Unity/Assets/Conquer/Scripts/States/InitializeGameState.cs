@@ -32,7 +32,7 @@ namespace Conquer.States
             context.Add(playerModel);
             context.Add(gameModel);
 
-            OutputContext.Data.SetValue(context);
+            OutputContext.Add(context);
 
             yield break;
         }

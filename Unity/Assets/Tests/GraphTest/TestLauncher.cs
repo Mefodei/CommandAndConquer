@@ -1,22 +1,26 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using Assets.Tools.UnityTools.ActorEntityModel;
+using Assets.Tools.UnityTools.Interfaces;
+using Assets.Tools.UnityTools.UniRoutine;
 using UniStateMachine.Nodes;
 using UnityEngine;
 
 public class TestLauncher : MonoBehaviour
 {
-
+    private IDisposableItem _disposableItem;
 	public UniStatesGraph Graph;
 	
 	// Use this for initialization
 	void Start () 
 	{
-		Graph.Execute(new EntityObject());
+	    _disposableItem = Graph.Execute(new EntityObject()).RunWithSubRoutines();
 	}
 
 	private void OnDisable()
 	{
-		Graph.Stop();
+	    _disposableItem?.Dispose();
+	    _disposableItem = null;
+        Graph.Dispose();
 	}
 }

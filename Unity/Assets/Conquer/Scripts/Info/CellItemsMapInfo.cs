@@ -27,8 +27,8 @@ namespace Conquer.Scripts.Info
 				Initialize();
 
 			var cell = _cellInfos[type].FirstOrDefault(x => x.Size == area);
-			
-			
+
+		    return null;
 		}
 
 

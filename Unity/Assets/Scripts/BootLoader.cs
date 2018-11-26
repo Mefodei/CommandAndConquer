@@ -3,6 +3,7 @@ using Assets.Conquer.Scripts.Field;
 using Assets.Conquer.Scripts.Info;
 using Assets.Tools.UnityTools.ActorEntityModel;
 using Assets.Tools.UnityTools.Interfaces;
+using Assets.Tools.UnityTools.UniRoutine;
 using UniRx;
 using UniStateMachine.Nodes;
 using UnityEngine;
@@ -13,6 +14,7 @@ namespace Assets.Scripts
 
         private IDisposable _gameDisposable;
         private IContext _context;
+        private IDisposableItem _graphDisposableItem;
 
         [SerializeField]
         private ConquerGameField _conquerGameField;
@@ -37,12 +39,14 @@ namespace Assets.Scripts
 
         private void StartGameBehaviour()
         {
-            GameStateBehaviour.Execute(_context);
+            _graphDisposableItem = GameStateBehaviour.Execute(_context).RunWithSubRoutines();
         }
 
         private void OnDisable()
         {
-            GameStateBehaviour.Stop();
+            _graphDisposableItem?.Dispose();
+            _graphDisposableItem = null;
+            GameStateBehaviour.Dispose();
         }
 
         private void OnDestroy()

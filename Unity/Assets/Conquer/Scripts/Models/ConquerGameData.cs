@@ -13,20 +13,17 @@ namespace Assets.Conquer.Scripts.Models
 
     public class ConquerGameData
     {
-        private ReactiveProperty<ConquerState> _state = new ReactiveProperty<ConquerState>(ConquerState.Initialize);
-        private ConquerStepData _activeStep = new ConquerStepData();
-        private ConquerFieldData _fieldData;
+        private ConquerFieldModel _fieldModel;
 
-        public ConquerGameData(ConquerGameConfiguration configuration)
+        public ConquerGameData(GameFieldInfo fieldInfo)
         {
-            _fieldData = new ConquerFieldData(configuration.FieldSize);
+            GameFieldInfo = fieldInfo;
+            _fieldModel = new ConquerFieldModel(fieldInfo.FieldSize);
         }
 
-        public ConquerStepData ActiveStep => _activeStep;
-
-        public ReactiveProperty<ConquerState> State => _state;
-
-        public ConquerFieldData FieldData => _fieldData;
+        public GameFieldInfo GameFieldInfo { get; protected set; }
+        
+        public ConquerFieldModel FieldModel => _fieldModel;
 
     }
 }

@@ -207,7 +207,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _conquerGameField: {fileID: 1727085560}
-  _configuration: {fileID: 11400000, guid: 71642156e47234641893a5e886aaef21, type: 2}
   _gameCamera: {fileID: 282840813}
   GameStateBehaviour: {fileID: 11400000, guid: 3f27f9c6c2465b5409c082f8912f15dd, type: 2}
 --- !u!4 &256783878
@@ -293,13 +292,13 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 282840810}
-  m_LocalRotation: {x: 0.3221423, y: -0, z: -0, w: 0.9466913}
-  m_LocalPosition: {x: 0, y: 5.26, z: -8.63}
+  m_LocalRotation: {x: 0.46700937, y: -0, z: -0, w: 0.8842524}
+  m_LocalPosition: {x: 0, y: 8.85, z: -5.87}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 37.585003, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 55.681004, y: 0, z: 0}
 --- !u!1 &726368860
 GameObject:
   m_ObjectHideFlags: 0
@@ -646,7 +645,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 54c11fdeb18ca6d4a81aa0ed391d9408, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

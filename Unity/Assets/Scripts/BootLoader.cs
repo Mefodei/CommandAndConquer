@@ -18,9 +18,6 @@ namespace Assets.Scripts
         private ConquerGameField _conquerGameField;
 
         [SerializeField]
-        private ConquerGameConfiguration _configuration;
-
-        [SerializeField]
         private Camera _gameCamera;
 
         public UniStatesGraph GameStateBehaviour;
@@ -30,7 +27,6 @@ namespace Assets.Scripts
         {
             _context = new EntityObject();
 
-            _context.Add(_configuration);
             _context.Add(_conquerGameField);
             _context.Add(_gameCamera);
 

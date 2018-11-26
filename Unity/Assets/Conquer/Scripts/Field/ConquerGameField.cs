@@ -8,7 +8,7 @@ namespace Assets.Conquer.Scripts.Field
     public class ConquerGameField : MonoBehaviour
     {
 
-        private ConquerFieldData _fieldData;
+        private ConquerFieldModel _fieldModel;
         private List<CellView> _cellViews = new List<CellView>();
 
         #region inspector data
@@ -28,9 +28,9 @@ namespace Assets.Conquer.Scripts.Field
 
         #endregion
 
-        public void Initialize(ConquerFieldData fieldData)
+        public void Initialize(ConquerFieldModel fieldModel)
         {
-            _fieldData = fieldData;
+            _fieldModel = fieldModel;
             UpdateGameField();
         }
 
@@ -38,12 +38,12 @@ namespace Assets.Conquer.Scripts.Field
         {
 
             var cellData = GetCell(position);
-            if (cellData == ConquerFieldData.DefaultCell)
+            if (cellData == ConquerFieldModel.DefaultCell)
                 return Vector3.zero;
 
             var cellPosition = cellData.Position;
 
-            var index = cellPosition.y * _fieldData.Size.x + cellPosition.x;
+            var index = cellPosition.y * _fieldModel.Size.x + cellPosition.x;
             index = Mathf.Clamp(index, 0, _cellViews.Count - 1);
 
             return _cellViews[index].transform.position + _cellItemsOffset;
@@ -55,15 +55,15 @@ namespace Assets.Conquer.Scripts.Field
             var cellPosition = position - _pivot.position;
 
             if (cellPosition.x < 0 || cellPosition.z < 0)
-                return ConquerFieldData.DefaultCell;
+                return ConquerFieldModel.DefaultCell;
 
-            var y = cellPosition.z / _fieldData.CellSize.y;
-            var x = cellPosition.x / _fieldData.CellSize.x;
+            var y = cellPosition.z / _fieldModel.CellSize.y;
+            var x = cellPosition.x / _fieldModel.CellSize.x;
 
             var row = Mathf.RoundToInt(y);
             var column = Mathf.RoundToInt(x);
 
-            var cell = _fieldData[row, column];
+            var cell = _fieldModel[row, column];
             return cell;
 
         }
@@ -71,12 +71,12 @@ namespace Assets.Conquer.Scripts.Field
         private void UpdateGameField()
         {
 
-            var size = _fieldData.Size * _defaultSize;
+            var size = _fieldModel.Size * _defaultSize;
             _fieldObject.localScale = new Vector3(size.x, _fieldObject.transform.localScale.y, size.y);
 
-            for (var j = 0; j < _fieldData.Size.y; j++)
+            for (var j = 0; j < _fieldModel.Size.y; j++)
             {
-                for (var i = 0; i < _fieldData.Size.x; i++)
+                for (var i = 0; i < _fieldModel.Size.x; i++)
                 {
                     var cell = CreateCell(j, i);
                     _cellViews.Add(cell);
@@ -89,7 +89,7 @@ namespace Assets.Conquer.Scripts.Field
         {
             var position = _fieldObject.transform.position;
             var pivotPosition = _pivot.position;
-            var size = _fieldData.CellSize;
+            var size = _fieldModel.CellSize;
 
             var cellPosition = new Vector3(pivotPosition.x + size.x * column, position.y, pivotPosition.z + size.y * row);
             cellPosition += _pivotOffset;

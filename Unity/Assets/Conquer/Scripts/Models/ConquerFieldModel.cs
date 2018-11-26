@@ -5,7 +5,7 @@ using UnityEngine;
 namespace Assets.Conquer.Scripts.Models
 {
 
-    public class ConquerFieldData
+    public class ConquerFieldModel
     {
 
         [SerializeField]
@@ -20,7 +20,7 @@ namespace Assets.Conquer.Scripts.Models
             Position = new Vector2Int(),
         };
 
-        public ConquerFieldData(Vector2Int size)
+        public ConquerFieldModel(Vector2Int size)
         {
             _cells = new List<CellData>();
             Size = size;

@@ -1,48 +1,63 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
 namespace Conquer.Scripts.Info
 {
-	[CreateAssetMenu(menuName = "Conquer/Info/CellItemsMap",fileName = "CellItemsMapInfo")]
+    [CreateAssetMenu(menuName = "Conquer/Info/CellItemsMap",fileName = "CellItemsMapInfo")]
 	public class CellItemsMapInfo : ScriptableObject
 	{
-
-		private Dictionary<int, List<CellItemInfo>> _cellInfos;
+        [NonSerialized]
+		private Dictionary<int, CellSkinsInfo> _cellInfos;
 			
 		#region inspector 
 		
 		[SerializeField]
-		private List<CellItemInfo> _cellItemInfos = new List<CellItemInfo>();
+		private List<CellSkinsInfo> _cellItemInfos = new List<CellSkinsInfo>();
 
-		#endregion
+        [SerializeField]
+        private List<string> _skinNames = new List<string>();
+
+        #endregion
+
+        public IReadOnlyList<string> SkinNames => _skinNames;
 		
-		public IReadOnlyList<CellItemInfo> CellItemInfos => _cellItemInfos;
+		public IReadOnlyList<CellSkinsInfo> CellItemInfos => _cellItemInfos;
 
+	    public void Add(CellSkinsInfo cellItems)
+	    {
+	        _cellItemInfos.Add(cellItems);
+            _skinNames.Add(cellItems.Name);
+        }
 
-		public ActorModel Create(int type,int area)
+	    public void Clear()
+	    {
+	        _skinNames.Clear();
+            _cellItemInfos.Clear();
+
+        }
+
+		public ActorModel Create(int type, int width, int height)
 		{
 			if(_cellInfos == null)
 				Initialize();
+			var cell = _cellInfos[type].CellItemInfos.FirstOrDefault(x => x.Width == width &&
+			           x.Height == height);
 
-			var cell = _cellInfos[type].FirstOrDefault(x => x.Size == area);
 		    var model = cell.Create();
 		    return model;
 		}
-
-
+        
 		private void Initialize()
 		{
-			_cellInfos = new Dictionary<int, List<CellItemInfo>>();
+			_cellInfos = new Dictionary<int, CellSkinsInfo>();
+		    var index = 0;
 			foreach (var cellItemInfo in _cellItemInfos)
 			{
-				var type = cellItemInfo.Type;
-				if (!_cellInfos.TryGetValue(type, out var list))
-				{
-					list = new List<CellItemInfo>();
-					_cellInfos[type] = list;
-				}
-				_cellInfos[type].Add(cellItemInfo);
+				_cellInfos[index] = cellItemInfo;
+			    index++;
+
 			}
 		}
 	}

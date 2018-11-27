@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c599e541c4d5844a871ef81f99c52f6, type: 3}
+  m_Name: default_skin_15
+  m_EditorClassIdentifier: 
+  _name: 
+  _statesGraph: {fileID: 11400000, guid: 415ab3ef5d478d44a86e44329e33dcf5, type: 2}
+  _stateObject: {fileID: 0}
+  _skinType: default
+  _type: 0
+  _width: 3
+  _height: 6
+  _view: {fileID: 114871543030529656, guid: 04823d0df95779a4f84bb43d99259ed5, type: 2}

@@ -14,10 +14,10 @@ namespace Assets.Conquer.Scripts.Field
             _info = info;
         }
 
-        public Actor Create(int type, int area)
+        public Actor Create(int type, int width,int height)
         {
             var actor = ClassPool.Spawn<Actor>();
-            var model = _info.Create(type, area);
+            var model = _info.Create(type, width,height);
             actor.SetModel(model);
             return actor;
         }

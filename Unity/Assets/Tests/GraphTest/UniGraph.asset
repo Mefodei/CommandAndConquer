@@ -17,6 +17,7 @@ MonoBehaviour:
   - {fileID: 114874900319693760}
   - {fileID: 114702423779207438}
   - {fileID: 114324796240466666}
+  - {fileID: 114849753572483530}
   RootNode: {fileID: 114517738455641576}
 --- !u!114 &114324796240466666
 MonoBehaviour:
@@ -30,7 +31,7 @@ MonoBehaviour:
   m_Name: Test Log Node
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 392, y: -200}
+  position: {x: 616, y: -216}
   ports:
     keys:
     - InputContext
@@ -174,6 +175,60 @@ MonoBehaviour:
       DefaultValidationValue: 1
   _message: 33333
   _delay: 2
+--- !u!114 &114849753572483530
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6752418799316404ebd6d31a6a8ac129, type: 3}
+  m_Name: Validate Test Node
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 120, y: -440}
+  ports:
+    keys:
+    - InputContext
+    - OutputContext
+    values:
+    - _fieldName: InputContext
+      _node: {fileID: 114849753572483530}
+      _typeQualifiedName: UniStateMachine.Nodes.UniStateNodePort, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: OutputContext
+        node: {fileID: 114858541468566232}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _dynamic: 0
+    - _fieldName: OutputContext
+      _node: {fileID: 114849753572483530}
+      _typeQualifiedName: UniStateMachine.Nodes.UniStateNodePort, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: InputContext
+        node: {fileID: 114874900319693760}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _dynamic: 0
+  _routineType: 0
+  _allowRestart: 1
+  _validator: {fileID: 0}
+  InputContext:
+    _validatorData:
+      Validator: {fileID: 0}
+      AllowNullContext: 0
+      DefaultValidationValue: 1
+  OutputContext:
+    _validatorData:
+      Validator: {fileID: 0}
+      AllowNullContext: 0
+      DefaultValidationValue: 1
+  _validateResult: 1
 --- !u!114 &114858541468566232
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -186,7 +241,7 @@ MonoBehaviour:
   m_Name: Test Log Node
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -232, y: -280}
+  position: {x: -168, y: -440}
   ports:
     keys:
     - InputContext
@@ -209,10 +264,10 @@ MonoBehaviour:
         Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: InputContext
-        node: {fileID: 114874900319693760}
+        node: {fileID: 114702423779207438}
         reroutePoints: []
       - fieldName: InputContext
-        node: {fileID: 114702423779207438}
+        node: {fileID: 114849753572483530}
         reroutePoints: []
       _direction: 1
       _connectionType: 0
@@ -244,7 +299,7 @@ MonoBehaviour:
   m_Name: RestartedLog
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 72, y: -280}
+  position: {x: 408, y: -424}
   ports:
     keys:
     - InputContext
@@ -256,7 +311,7 @@ MonoBehaviour:
         Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: OutputContext
-        node: {fileID: 114858541468566232}
+        node: {fileID: 114849753572483530}
         reroutePoints: []
       _direction: 0
       _connectionType: 0
@@ -273,7 +328,7 @@ MonoBehaviour:
       _connectionType: 0
       _dynamic: 0
   _routineType: 0
-  _allowRestart: 0
+  _allowRestart: 1
   _validator: {fileID: 0}
   InputContext:
     _validatorData:

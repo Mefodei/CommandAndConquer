@@ -15,6 +15,7 @@ namespace Conquer.Scripts.Models
 		{
 			_info = info;
 			View.Value = _info.View.Spawn();
+		    Behaviour.Value = _info.Behaviour;
 		}
 
 	    public override void Release()
@@ -40,12 +41,12 @@ namespace Conquer.Scripts.Models
 
 	    public CellItemInfo CellInfo => _info;
 
-		public IntReactiveProperty Column = new IntReactiveProperty();
+		public IntReactiveProperty Column { get; } = new IntReactiveProperty();
 
-		public IntReactiveProperty Row = new IntReactiveProperty();
+		public IntReactiveProperty Row { get; } = new IntReactiveProperty();
 
-		public BoolReactiveProperty Fixed = new BoolReactiveProperty(false);
+		public BoolReactiveProperty Fixed { get; } = new BoolReactiveProperty(false);
 
-        public ReactiveProperty<CellItemView> View => new ReactiveProperty<CellItemView>();
+        public ReactiveProperty<CellItemView> View { get; } = new ReactiveProperty<CellItemView>();
 	}
 }

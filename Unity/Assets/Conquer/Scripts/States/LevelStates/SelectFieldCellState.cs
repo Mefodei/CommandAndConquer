@@ -18,9 +18,9 @@ namespace Conquer.States
 
             var turn = playerModel.TurnModel.Value;
             var size = turn.ItemSize.Value;
-            var area = size.x * size.y;
 
-            var view = cellItemFactory.Create(0, area);
+            var view = cellItemFactory.Create(0, size.x,size.y);
+            _context.AddValue(context,view);
 
             while (IsActive(context))
             {
@@ -34,6 +34,9 @@ namespace Conquer.States
 
         protected override void OnExit(IContext context)
         {
+            var actor = _context.Get<Actor>(context);
+            actor?.Despawn();
+
             base.OnExit(context);
         }
     }

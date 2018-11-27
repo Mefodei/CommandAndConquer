@@ -3,7 +3,7 @@
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
@@ -11,6 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1eab812c2dcf844992a59a02c1e4672, type: 3}
   m_Name: ConquerGameConfiguration
   m_EditorClassIdentifier: 
-  FieldSize: {x: 10, y: 10}
-  CellObject: {fileID: 114075056159570648, guid: da76d64f0aaf4f24d8cb1c27b04099d8,
-    type: 2}
+  _fieldSize: {x: 10, y: 10}
+  _cellWidthLimit: {x: 1, y: 7}
+  _cellHeightLimit: {x: 1, y: 7}
+  _cellsMap: {fileID: 11400000, guid: 374ceff2d2652b84eb1bed6861928286, type: 2}

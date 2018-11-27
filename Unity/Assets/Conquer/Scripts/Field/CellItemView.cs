@@ -2,8 +2,12 @@
 
 namespace Conquer.Scripts.Field
 {
-    public class CellItemView : MonoBehaviour {
+    public class CellItemView : MonoBehaviour
+    {
 
+        public Transform Pivot;
+
+        public Transform RotatedPivot;
 
     }
 }

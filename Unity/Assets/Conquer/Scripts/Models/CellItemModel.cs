@@ -14,6 +14,7 @@ namespace Conquer.Scripts.Models
 		public void Initialize(CellItemInfo info)
 		{
 			_info = info;
+			View.Value = _info.View.Spawn();
 		}
 
 	    public override void Release()

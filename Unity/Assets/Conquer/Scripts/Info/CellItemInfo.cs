@@ -27,7 +27,7 @@ namespace Conquer.Scripts.Info
         public override ActorModel Create()
 		{
 			var cellModel = ClassPool.Spawn<CellItemModel>();
-            cellModel.Initialize(this);
+			cellModel.Initialize(this);
 			return cellModel;
 		}
 	}

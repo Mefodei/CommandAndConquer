@@ -62,7 +62,7 @@ namespace Assets.Conquer.Editor
                     skinInfo.CellItemInfos = new List<CellItemInfo>();
                     
                     EditorUtility.SetDirty(skinInfo);
-
+                    
                 }
 
                 if (!Directory.Exists(skinDirectory))
@@ -83,6 +83,11 @@ namespace Assets.Conquer.Editor
             foreach (var skin in skins)
             {
                 skinsMap.Add(skin.Value);
+                EditorUtility.SetDirty(skin.Value);
+                foreach (var itemInfo in skin.Value.CellItemInfos)
+                {
+                    EditorUtility.SetDirty(itemInfo);
+                }
             }
 
             EditorUtility.SetDirty(skinsMap);

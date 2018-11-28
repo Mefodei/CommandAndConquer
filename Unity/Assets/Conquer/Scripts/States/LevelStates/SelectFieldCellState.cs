@@ -6,7 +6,7 @@ using Assets.Tools.UnityTools.Interfaces;
 using Assets.Tools.UnityTools.ObjectPool.Scripts;
 using UniStateMachine;
 
-namespace Conquer.States
+namespace Conquer.States.Game
 {
     public class SelectFieldCellState : UniNode 
     {
@@ -19,8 +19,12 @@ namespace Conquer.States
             var turn = playerModel.TurnModel.Value;
             var size = turn.ItemSize.Value;
 
-            var view = cellItemFactory.Create(0, size.x,size.y);
-            _context.AddValue(context,view);
+            var actor = cellItemFactory.Create(0, 1, 1);
+            
+            _context.AddValue(context,actor);
+
+            actor.Context.Add(playerModel);
+            actor.SetEnabled(true);
 
             while (IsActive(context))
             {

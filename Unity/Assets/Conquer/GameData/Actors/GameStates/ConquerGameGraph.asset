@@ -136,7 +136,7 @@ MonoBehaviour:
   m_Name: Select Field Cell State
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 232, y: -504}
+  position: {x: 280, y: -584}
   ports:
     keys:
     - InputContext
@@ -186,7 +186,7 @@ MonoBehaviour:
   m_Name: Update Turn Data State
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 8, y: -376}
+  position: {x: -8, y: -584}
   ports:
     keys:
     - InputContext

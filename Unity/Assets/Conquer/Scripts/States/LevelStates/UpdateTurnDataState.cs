@@ -4,7 +4,7 @@ using Assets.Tools.UnityTools.Interfaces;
 using UniStateMachine;
 using UnityEngine;
 
-namespace Conquer.States
+namespace Conquer.States.Game
 {
 	public class UpdateTurnDataState : UniNode 
 	{

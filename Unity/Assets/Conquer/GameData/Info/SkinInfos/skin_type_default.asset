@@ -12,4 +12,25 @@ MonoBehaviour:
   m_Name: skin_type_default
   m_EditorClassIdentifier: 
   Name: default
-  CellItemInfos: []
+  CellItemInfos:
+  - {fileID: 11400000, guid: e85eed0e79e5b5347be2bb91d208c755, type: 2}
+  - {fileID: 11400000, guid: c9812e7585d6e4340b865ed265b18659, type: 2}
+  - {fileID: 11400000, guid: badb811ef25ad6b40ab3eab96da83ba6, type: 2}
+  - {fileID: 11400000, guid: c1c4f9eb9d1bcf84a820b888eb9cf849, type: 2}
+  - {fileID: 11400000, guid: 9482f6c16bae8814ea1fb540eb4d04f3, type: 2}
+  - {fileID: 11400000, guid: 57e6a865dc511534d8aa54d371e786b7, type: 2}
+  - {fileID: 11400000, guid: ce1a01273ab6810409391df7deac87f0, type: 2}
+  - {fileID: 11400000, guid: 71c31dc0478ca4341847373e0e69bc8d, type: 2}
+  - {fileID: 11400000, guid: 34062d97a7170914fb705468b8de73ed, type: 2}
+  - {fileID: 11400000, guid: d13f7fa1922c5a74895ab4bca89f74eb, type: 2}
+  - {fileID: 11400000, guid: ca874734622678f47a1ff7d7a5313367, type: 2}
+  - {fileID: 11400000, guid: d89778244a369894cb2c93b41a732138, type: 2}
+  - {fileID: 11400000, guid: 2ad97ed696694fe49bd7a27d9e48fc91, type: 2}
+  - {fileID: 11400000, guid: 3f4438036ab2d594a8f4bc7fa575e19d, type: 2}
+  - {fileID: 11400000, guid: 4a8b732f97f75f94e9b863bb70e40e7b, type: 2}
+  - {fileID: 11400000, guid: 145ac9b4e5a41de41b4cc19cdb36a711, type: 2}
+  - {fileID: 11400000, guid: 928c7c7053d01b04aa2a2d220093f37a, type: 2}
+  - {fileID: 11400000, guid: 1b92170c2a5749749b348a359df73be2, type: 2}
+  - {fileID: 11400000, guid: 13fe5b13189fe2e4d9dfbd79206be2b4, type: 2}
+  - {fileID: 11400000, guid: 8b46f89c18a06f145917a820640e1823, type: 2}
+  - {fileID: 11400000, guid: e73751fa734081849afeba8376ed5e2e, type: 2}

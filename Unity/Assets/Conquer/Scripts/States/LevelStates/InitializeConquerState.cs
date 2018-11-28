@@ -7,9 +7,9 @@ using UniStateMachine;
 using UnityEngine;
 using UnityEngine.Serialization;
 
-namespace Conquer.States
+namespace Conquer.States.Game
 {
-    [CreateAssetMenu(fileName = "InitializeGameState", menuName = "Conquer/States/InitializeGameState")]
+    
     public class InitializeConquerState :  UniNode
     {
         

@@ -6,7 +6,7 @@ using Conquer.Scripts.Field;
 using UniStateMachine;
 using UnityEngine;
 
-namespace Conquer.States
+namespace Conquer.States.Game
 {
     [CreateAssetMenu(fileName = "InputGameState", menuName = "Conquer/States/InputGameState")]
     public class InputGameState : UniNode
@@ -36,7 +36,9 @@ namespace Conquer.States
                     var hitResult = Physics.Raycast(ray, out var hit, _layerMask);
 
                     if (!hitResult || gameField.transform != hit.transform)
+                    {
                         continue;
+                    }
 
                     var turn = playerModel.TurnModel.Value;
                     turn.SelectedCell.Value = gameField.GetCellPosition(hit.point);

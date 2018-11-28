@@ -16,6 +16,6 @@ MonoBehaviour:
   _stateObject: {fileID: 0}
   _skinType: default
   _type: 0
-  _width: 3
-  _height: 6
-  _view: {fileID: 114871543030529656, guid: 04823d0df95779a4f84bb43d99259ed5, type: 2}
+  _width: 4
+  _height: 4
+  _view: {fileID: 114568923261824914, guid: 3bc71507230f8854bb6fa3873e6b12a1, type: 2}

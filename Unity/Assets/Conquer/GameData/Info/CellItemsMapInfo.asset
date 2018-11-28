@@ -12,14 +12,6 @@ MonoBehaviour:
   m_Name: CellItemsMapInfo
   m_EditorClassIdentifier: 
   _cellItemInfos:
-  - {fileID: 11400000, guid: 060a341e966b2e54f9c82d24e63ea0ac, type: 2}
-  - {fileID: 11400000, guid: a64874afd3718e647979eec3fed3426d, type: 2}
-  - {fileID: 11400000, guid: 1e1b5cf352a18a74183aad85acb10d5b, type: 2}
-  - {fileID: 11400000, guid: 0c51080191cc6954bad606d77979e533, type: 2}
-  - {fileID: 11400000, guid: 503579ae0ef216e40818fd577a9e0be7, type: 2}
-  - {fileID: 11400000, guid: d20e0e704de11ec4a9e68a03eab66d08, type: 2}
-  - {fileID: 11400000, guid: 1a261dc17c34c5e4190e8443a71deb71, type: 2}
-  - {fileID: 11400000, guid: 9226fbf63d1f7214eb4fbc12bac86b57, type: 2}
-  - {fileID: 11400000, guid: 7e7cb759db9b70247a13652e8baf8909, type: 2}
-  - {fileID: 11400000, guid: d88d1dcc0ce527e488af0a37a98ed391, type: 2}
-  - {fileID: 11400000, guid: e0c9e9461ccaeba4c90bc0203737a47c, type: 2}
+  - {fileID: 11400000, guid: f8955e64646cd014e9b05c692bdafb31, type: 2}
+  _skinNames:
+  - default

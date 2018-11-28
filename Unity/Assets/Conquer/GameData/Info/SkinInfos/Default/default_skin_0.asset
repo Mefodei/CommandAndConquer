@@ -9,13 +9,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3c599e541c4d5844a871ef81f99c52f6, type: 3}
-  m_Name: skinitems_skin_0
+  m_Name: default_skin_0
   m_EditorClassIdentifier: 
   _name: 
-  _statesGraph: {fileID: 0}
+  _statesGraph: {fileID: 11400000, guid: 415ab3ef5d478d44a86e44329e33dcf5, type: 2}
   _stateObject: {fileID: 0}
-  _skinType: skinitems
+  _skinType: default
   _type: 0
-  _width: 0
-  _height: 0
-  _view: {fileID: 114075056159570648, guid: da76d64f0aaf4f24d8cb1c27b04099d8, type: 2}
+  _width: 1
+  _height: 1
+  _view: {fileID: 114109501329479926, guid: 990f14358cd8cfb4bbe62b18abc7af1f, type: 2}

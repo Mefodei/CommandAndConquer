@@ -60,6 +60,7 @@ namespace Assets.Conquer.Editor
                     skins[skinType] = skinInfo;
                     skinInfo.Name = skinType;
                     skinInfo.CellItemInfos = new List<CellItemInfo>();
+                    
                     EditorUtility.SetDirty(skinInfo);
 
                 }
@@ -84,6 +85,8 @@ namespace Assets.Conquer.Editor
                 skinsMap.Add(skin.Value);
             }
 
+            EditorUtility.SetDirty(skinsMap);
+            
             AssetDatabase.SaveAssets();
 
         }

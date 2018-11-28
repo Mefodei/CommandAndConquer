@@ -17,5 +17,5 @@ MonoBehaviour:
   _skinType: default
   _type: 0
   _width: 3
-  _height: 5
-  _view: {fileID: 114319665630164574, guid: 4805b1d7c142ee842a702ea59909dbea, type: 2}
+  _height: 6
+  _view: {fileID: 114871543030529656, guid: 04823d0df95779a4f84bb43d99259ed5, type: 2}

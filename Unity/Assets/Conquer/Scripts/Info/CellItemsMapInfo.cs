@@ -38,13 +38,19 @@ namespace Conquer.Scripts.Info
 
         }
 
-		public ActorModel Create(int type, int width, int height)
+		public CellItemInfo GetCellInfo(int type, int width, int height)
 		{
 			if(_cellInfos == null)
 				Initialize();
-			var cell = _cellInfos[type].CellItemInfos.FirstOrDefault(x => x.Width == width &&
-			           x.Height == height);
-
+			var cell = _cellInfos[type].CellItemInfos.
+				FirstOrDefault(x => x.Width == width && x.Height == height || 
+				                    x.Width == height && x.Height == width);
+			return cell;
+		}
+		
+		public ActorModel Create(int type, int width, int height)
+		{
+			var cell = GetCellInfo(type, width, height);
 		    var model = cell.Create();
 		    return model;
 		}

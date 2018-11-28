@@ -37,6 +37,7 @@ namespace Conquer.States.Game
 
                     if (!hitResult || gameField.transform != hit.transform)
                     {
+
                         continue;
                     }
 

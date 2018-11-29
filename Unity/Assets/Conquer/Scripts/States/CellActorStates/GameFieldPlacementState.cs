@@ -17,10 +17,10 @@ namespace Conquer.States.CellActor
 
 			var turn = playerModel.TurnModel.Value;
 			var hit = turn.GameFieldHit.Value;
-			var cellPosition = turn.SelectedCell.Value;
 		
 			while (playerModel.IsTurnActive.Value)
 			{
+				var cellPosition = turn.SelectedCell.Value;
 				cellView.transform.position = cellPosition;
 				yield return null;
 			}

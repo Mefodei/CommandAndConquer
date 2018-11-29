@@ -46,7 +46,7 @@ namespace Assets.Conquer.Scripts.Field
             var index = cellPosition.y * _fieldModel.Size.x + cellPosition.x;
             index = Mathf.Clamp(index, 0, _cellViews.Count - 1);
 
-            return _cellViews[index].transform.position + _cellItemsOffset;
+            return _cellViews[index].transform.position + _cellItemsOffset - _pivotOffset;
 
         }
 
@@ -60,8 +60,8 @@ namespace Assets.Conquer.Scripts.Field
             var y = cellPosition.z / _fieldModel.CellSize.y;
             var x = cellPosition.x / _fieldModel.CellSize.x;
 
-            var row = Mathf.RoundToInt(y);
-            var column = Mathf.RoundToInt(x);
+            var row = Mathf.FloorToInt(y);
+            var column = Mathf.FloorToInt(x);
 
             var cell = _fieldModel[row, column];
             return cell;

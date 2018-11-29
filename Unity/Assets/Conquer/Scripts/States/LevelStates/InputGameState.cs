@@ -30,19 +30,8 @@ namespace Conquer.States.Game
                 if (Input.GetMouseButton(0))
                 {
                     playerModel.IsTurnActive.Value = true;
-                    var mousePosition = Input.mousePosition;
-                    var ray = camera.ScreenPointToRay(mousePosition);
-                    var hitResult = Physics.Raycast(ray, out var hit, _layerMask);
 
-                    if (!hitResult || gameField.transform != hit.transform)
-                    {
-                        continue;
-                    }
-
-                    var turn = playerModel.TurnModel.Value;
-                    turn.SelectedCell.Value = gameField.GetCellPosition(hit.point);
-                    turn.GameFieldHit.Value = hit;
-                    
+                    UpdateSelectedCell(camera, gameField, playerModel);
                 }
                 else
                 {
@@ -51,6 +40,24 @@ namespace Conquer.States.Game
 
                 
             }
+        }
+
+        private void UpdateSelectedCell(Camera camera,ConquerGameField gameField,ConquerPlayerModel playerModel)
+        {
+            var mousePosition = Input.mousePosition;
+            var ray = camera.ScreenPointToRay(mousePosition);
+            var hitResult = Physics.Raycast(ray, out var hit, _layerMask);
+
+            if (!hitResult || gameField.transform != hit.transform)
+            {
+                return;
+            }
+
+            var turn = playerModel.TurnModel.Value;
+            var cellPosition = gameField.GetCellPosition(hit.point);
+            turn.SelectedCell.Value = cellPosition;
+            turn.GameFieldHit.Value = hit;
+            
         }
 
     }

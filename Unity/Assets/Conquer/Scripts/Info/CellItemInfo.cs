@@ -1,4 +1,4 @@
-﻿using Assets.Tools.UnityTools.ActorEntityModel;
+﻿using UnityTools.ActorEntityModel;
 using Assets.Tools.UnityTools.ObjectPool.Scripts;
 using Conquer.Scripts.Field;
 using Conquer.Scripts.Models;

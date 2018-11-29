@@ -1,4 +1,4 @@
-﻿using Assets.Tools.UnityTools.ActorEntityModel;
+﻿using UnityTools.ActorEntityModel;
 using UniRx;
 using UnityEngine;
 

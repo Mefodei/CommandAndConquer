@@ -1,6 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using Assets.Tools.UnityTools.ActorEntityModel;
+using UnityTools.ActorEntityModel;
 using Assets.Tools.UnityTools.Interfaces;
 using Assets.Tools.UnityTools.UniRoutine;
 using UniStateMachine.Nodes;

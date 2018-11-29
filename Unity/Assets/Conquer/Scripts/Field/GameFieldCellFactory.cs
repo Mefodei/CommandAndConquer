@@ -1,5 +1,5 @@
 ﻿
-using Assets.Tools.UnityTools.ActorEntityModel;
+using UnityTools.ActorEntityModel;
 using Assets.Tools.UnityTools.ObjectPool.Scripts;
 using Conquer.Scripts.Info;
 

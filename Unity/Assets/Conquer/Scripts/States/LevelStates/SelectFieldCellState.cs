@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using Assets.Conquer.Scripts.Field;
 using Assets.Conquer.Scripts.Models;
-using Assets.Tools.UnityTools.ActorEntityModel;
+using UnityTools.ActorEntityModel;
 using Assets.Tools.UnityTools.Interfaces;
 using Assets.Tools.UnityTools.ObjectPool.Scripts;
 using UniStateMachine;

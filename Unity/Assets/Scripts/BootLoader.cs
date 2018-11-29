@@ -1,7 +1,7 @@
 ﻿using System;
 using Assets.Conquer.Scripts.Field;
 using Assets.Conquer.Scripts.Info;
-using Assets.Tools.UnityTools.ActorEntityModel;
+using UnityTools.ActorEntityModel;
 using Assets.Tools.UnityTools.Interfaces;
 using Assets.Tools.UnityTools.UniRoutine;
 using UniRx;

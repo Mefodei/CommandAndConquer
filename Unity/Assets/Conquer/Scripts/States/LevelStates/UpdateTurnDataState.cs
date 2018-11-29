@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using Assets.Conquer.Scripts.Models;
 using Assets.Tools.UnityTools.Interfaces;
+using Conquer.Scripts.Messages;
 using UniStateMachine;
 using UnityEngine;
 
@@ -17,8 +18,17 @@ namespace Conquer.States.Game
 			
 			var widthSize = Random.Range(gameInfo.CellWidthLimit.x,gameInfo.CellWidthLimit.y);
 			var heightSize = Random.Range(gameInfo.CellHeightLimit.x,gameInfo.CellHeightLimit.y);
-			
-			var turnData = playerModel.TurnModel.Value;
+
+
+		    var rollResult = new RollTheCubeResultMessage()
+		    {
+		        Width = widthSize,
+		        Height = heightSize,
+		    };
+
+		    context.Publish(rollResult);
+
+            var turnData = playerModel.TurnModel.Value;
 			turnData.ItemSize.Value = new Vector2Int(widthSize,heightSize);
 			
 			return base.ExecuteState(context);

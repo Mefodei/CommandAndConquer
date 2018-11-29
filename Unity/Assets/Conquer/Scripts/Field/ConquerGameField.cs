@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using Assets.Conquer.Scripts.Models;
+using Assets.Tools.UnityTools.Math;
 using UnityEngine;
 
 namespace Assets.Conquer.Scripts.Field
@@ -48,6 +49,35 @@ namespace Assets.Conquer.Scripts.Field
 
             return _cellViews[index].transform.position + _cellItemsOffset - _pivotOffset;
 
+        }
+
+        public bool Validate(Vector2Int position, Vector2Int size)
+        {
+            var validation = ValidateIndex(position.x, position.y);
+            var max = position + size;
+            validation = validation && ValidateIndex(max.x, max.y);
+
+            if (!validation)
+                return false;
+
+            for (var column = position.x; column < max.x; column++)
+            {
+                for (var row = position.y; row < max.y; row++)
+                {
+                    var cell = _fieldModel[row,column];
+                    if (cell.Owner != 0)
+                        return false;
+                }
+            }
+
+            return true;
+        }
+
+        public bool ValidateIndex(int x, int y)
+        {
+            var size = _fieldModel.Size;
+            return x.IsInRange(new Vector2Int(0, size.x)) &&
+                   y.IsInRange(new Vector2Int(0, size.y));
         }
 
         public CellData GetCell(Vector3 position)

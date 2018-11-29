@@ -14,16 +14,18 @@ namespace Conquer.States.Game
         {
             var playerModel = context.Get<ConquerPlayerModel>();
             var gameData = context.Get<ConquerGameData>();
+            var gameField = context.Get<ConquerGameField>();
             var cellItemFactory = context.Get<IGameFieldCellFactory>();
 
             var turn = playerModel.TurnModel.Value;
             var size = turn.ItemSize.Value;
 
-            var actor = cellItemFactory.Create(0, 1, 1);
+            var actor = cellItemFactory.Create(0, size.x,size.y);
             
             _context.AddValue(context,actor);
-
+            
             actor.Context.Add(playerModel);
+            actor.Context.Add(gameField);
             actor.SetEnabled(true);
 
             while (IsActive(context))

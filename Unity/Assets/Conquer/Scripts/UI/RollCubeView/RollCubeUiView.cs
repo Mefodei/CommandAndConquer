@@ -1,10 +1,12 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Assets.SubModules.UnityTools.UiViews;
 using Assets.Tools.UnityTools.Interfaces;
-using Conquer.Scripts.Messages;
+using Conquer.Messages;
 using TMPro;
 using UniRx;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityTools.UiViews;
 
 namespace Assets.Conquer.Scripts.UI
@@ -19,6 +21,7 @@ namespace Assets.Conquer.Scripts.UI
 
     public class RollCubeUiView : UiViewBehaviour
     {
+
         private List<string> _numbers = new List<string>();
 
         private RollCubeUiModel _model = new RollCubeUiModel();
@@ -35,6 +38,13 @@ namespace Assets.Conquer.Scripts.UI
 
         #endregion
 
+        public void MakeRoll()
+        {
+            Context.Publish(new MakeTheRollCubesMessage());
+        }
+
+        #region protected
+        
         protected override void Activate()
         {
             InitializeModel();
@@ -43,9 +53,7 @@ namespace Assets.Conquer.Scripts.UI
             Context.LifeTime.AddDispose(item);
         }
 
-        protected override void Deactivate()
-        {
-        }
+        protected override void Deactivate(){}
 
         protected override void OnUpdateView()
         {
@@ -78,5 +86,6 @@ namespace Assets.Conquer.Scripts.UI
             Context.LifeTime.AddDispose(item);
         }
 
+        #endregion
     }
 }

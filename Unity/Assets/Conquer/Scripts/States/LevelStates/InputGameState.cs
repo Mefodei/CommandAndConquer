@@ -2,7 +2,7 @@
 using Assets.Conquer.Scripts.Field;
 using Assets.Conquer.Scripts.Models;
 using Assets.Tools.UnityTools.Interfaces;
-using Conquer.Scripts.Field;
+using Conquer.Field;
 using UniStateMachine;
 using UnityEngine;
 
@@ -29,21 +29,15 @@ namespace Conquer.States.Game
 
                 if (Input.GetMouseButton(0))
                 {
-                    playerModel.IsTurnActive.Value = true;
-
                     UpdateSelectedCell(camera, gameField, playerModel);
                 }
-                else
-                {
-                    playerModel.IsTurnActive.Value = false;
-                }
-
                 
             }
         }
 
         private void UpdateSelectedCell(Camera camera,ConquerGameField gameField,ConquerPlayerModel playerModel)
         {
+            
             var mousePosition = Input.mousePosition;
             var ray = camera.ScreenPointToRay(mousePosition);
             var hitResult = Physics.Raycast(ray, out var hit, _layerMask);

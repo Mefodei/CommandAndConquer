@@ -1,11 +1,11 @@
 ﻿using Assets.Tools.UnityTools.Interfaces;
 using Assets.Tools.UnityTools.ObjectPool.Scripts;
-using Conquer.Scripts.Field;
-using Conquer.Scripts.Info;
+using Conquer.Field;
+using Conquer.Info;
 using UniRx;
 using UnityEngine;
 
-namespace Conquer.Scripts.Models
+namespace Conquer.Models
 {
 	public class CellItemModel : ActorModel, IPoolable
 	{

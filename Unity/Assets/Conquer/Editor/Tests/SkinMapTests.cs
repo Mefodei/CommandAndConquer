@@ -1,7 +1,7 @@
 ﻿using NUnit.Framework;
 using System.Collections.Generic;
 using Assets.UI.Windows.Tools.Editor;
-using Conquer.Scripts.Info;
+using Conquer.Info;
 
 [TestFixture]
 public class SkinMapTests

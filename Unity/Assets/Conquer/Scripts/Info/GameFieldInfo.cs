@@ -1,4 +1,4 @@
-﻿using Conquer.Scripts.Info;
+﻿using Conquer.Info;
 using UnityEngine;
 
 namespace Assets.Conquer.Scripts.Info

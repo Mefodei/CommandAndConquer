@@ -13,7 +13,6 @@ namespace Conquer.States.Game
         protected override IEnumerator ExecuteState(IContext context)
         {
             var playerModel = context.Get<ConquerPlayerModel>();
-            var gameData = context.Get<ConquerGameData>();
             var gameField = context.Get<ConquerGameField>();
             var cellItemFactory = context.Get<IGameFieldCellFactory>();
 

@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Conquer.Scripts.Messages
+namespace Conquer.Messages
 {
     public struct RollTheCubeResultMessage
     {

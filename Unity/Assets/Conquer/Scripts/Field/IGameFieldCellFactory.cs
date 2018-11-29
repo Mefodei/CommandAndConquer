@@ -1,5 +1,5 @@
 ﻿using UnityTools.ActorEntityModel;
-using Conquer.Scripts.Field;
+using Conquer.Field;
 
 namespace Assets.Conquer.Scripts.Field
 {

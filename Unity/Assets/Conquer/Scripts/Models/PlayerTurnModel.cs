@@ -2,7 +2,7 @@
 using UniRx;
 using UnityEngine;
 
-namespace Conquer.Scripts.Models
+namespace Conquer.Models
 {
     public class PlayerTurnModel
     {

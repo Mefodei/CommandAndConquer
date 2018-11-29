@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Conquer.Scripts.Field
+namespace Conquer.Field
 {
     public class CellItemView : MonoBehaviour
     {

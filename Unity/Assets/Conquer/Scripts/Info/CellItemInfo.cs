@@ -1,11 +1,11 @@
 ﻿using UnityTools.ActorEntityModel;
 using Assets.Tools.UnityTools.ObjectPool.Scripts;
-using Conquer.Scripts.Field;
-using Conquer.Scripts.Models;
+using Conquer.Field;
+using Conquer.Models;
 using UniStateMachine.Nodes;
 using UnityEngine;
 
-namespace Conquer.Scripts.Info
+namespace Conquer.Info
 {
 	[CreateAssetMenu(fileName = "CellItemInfo",menuName = "Conquer/Info/CellItemInfo")]
 	public class CellItemInfo : ActorInfo

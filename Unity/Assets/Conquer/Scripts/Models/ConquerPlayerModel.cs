@@ -1,4 +1,4 @@
-﻿using Conquer.Scripts.Models;
+﻿using Conquer.Models;
 using UniRx;
 
 namespace Assets.Conquer.Scripts.Models

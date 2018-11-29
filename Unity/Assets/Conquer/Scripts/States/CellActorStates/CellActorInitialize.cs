@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using Assets.Conquer.Scripts.Models;
 using Assets.Tools.UnityTools.Interfaces;
-using Conquer.Scripts.Models;
+using Conquer.Models;
 using UniStateMachine;
 
 namespace Conquer.States.CellActor
@@ -15,7 +15,6 @@ namespace Conquer.States.CellActor
 
 			//activate view
 			var view = cellModel.View.Value;
-			view.gameObject.SetActive(true);
 			view.transform.SetParent(null);
 			
 			yield return base.ExecuteState(context);

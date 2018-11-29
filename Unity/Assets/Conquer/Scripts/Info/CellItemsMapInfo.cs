@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-namespace Conquer.Scripts.Info
+namespace Conquer.Info
 {
     [CreateAssetMenu(menuName = "Conquer/Info/CellItemsMap",fileName = "CellItemsMapInfo")]
 	public class CellItemsMapInfo : ScriptableObject

@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using Assets.UI.Windows.Tools.Editor;
-using Conquer.Scripts.Field;
-using Conquer.Scripts.Info;
+using Conquer.Field;
+using Conquer.Info;
 using UniStateMachine.Nodes;
 using UnityEditor;
 using UnityEngine;
@@ -13,6 +13,7 @@ namespace Assets.Conquer.Editor
 {
     public class ConquerEditorCommands
     {
+        private const string DefaultCellBehaviour = "default";
         private const string SkinsFolderPath = "SkinInfos";
 
         [MenuItem(itemName:"Conquer/Update Cell Skins")]
@@ -72,9 +73,13 @@ namespace Assets.Conquer.Editor
 
                 var skinItemInfo = AssetEditorTools.CreateAsset<CellItemInfo>(skinType+"_skin_"+i, skinDirectory);
                 skinInfo.CellItemInfos.Add(skinItemInfo);
-                var behaviourName = string.Format($"{skinType}_cell_actor");
-                var graph = graphs.FirstOrDefault(x =>
-                    string.Equals(behaviourName, x.name, StringComparison.InvariantCultureIgnoreCase));
+
+                var graph = Select(graphs,string.Format($"{skinType}_cell_actor"));
+                if (graph == null)
+                {
+                    graph = Select(graphs,string.Format($"{DefaultCellBehaviour}_cell_actor"));
+                }
+                
                 skinItemInfo.Initialize(skinType, graph, cellItemView);
 
                 EditorUtility.SetDirty(skinItemInfo);
@@ -94,6 +99,12 @@ namespace Assets.Conquer.Editor
             
             AssetDatabase.SaveAssets();
 
+        }
+
+        private static UniStatesGraph Select(List<UniStatesGraph> graphs, string name)
+        {
+            return graphs.FirstOrDefault(x =>
+                string.Equals(name, x.name, StringComparison.InvariantCultureIgnoreCase));
         }
 
     }

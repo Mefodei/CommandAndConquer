@@ -1,7 +1,7 @@
 ﻿
 using UnityTools.ActorEntityModel;
 using Assets.Tools.UnityTools.ObjectPool.Scripts;
-using Conquer.Scripts.Info;
+using Conquer.Info;
 
 namespace Assets.Conquer.Scripts.Field
 {

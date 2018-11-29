@@ -2,8 +2,8 @@
 using Assets.Conquer.Scripts.Field;
 using Assets.Conquer.Scripts.Models;
 using Assets.Tools.UnityTools.Interfaces;
-using Conquer.Scripts.Field;
-using Conquer.Scripts.Models;
+using Conquer.Field;
+using Conquer.Models;
 using UniStateMachine;
 using UnityEngine;
 
@@ -32,6 +32,8 @@ namespace Conquer.States.CellActor
 
 			    var cellViewPosition = gameField.GetCellPosition(result.position);
 			    cellView.transform.position = cellViewPosition;
+				cellView.gameObject.SetActive(true);
+				
                 if (result.valid)
 				{
 

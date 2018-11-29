@@ -14,5 +14,7 @@ namespace Conquer.Scripts.Models
         
         public ReactiveProperty<Vector3> SelectedCell = new ReactiveProperty<Vector3>();
         
+        public ReactiveProperty<RaycastHit> GameFieldHit = new ReactiveProperty<RaycastHit>();
+        
     }
 }

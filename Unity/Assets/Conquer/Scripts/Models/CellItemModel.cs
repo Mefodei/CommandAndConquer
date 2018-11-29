@@ -34,7 +34,10 @@ namespace Conquer.Scripts.Models
 
 	    public override void AddContextData(IContext context)
 	    {
+		    
 	        base.AddContextData(context);
+		    context.Add(this);
+		    context.Add(_info);
             context.Add(View.Value);
 
 	    }

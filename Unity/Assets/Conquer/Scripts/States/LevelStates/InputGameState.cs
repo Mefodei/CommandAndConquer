@@ -17,7 +17,6 @@ namespace Conquer.States.Game
         protected override IEnumerator ExecuteState(IContext context)
         {
 
-            var itemFactory = context.Get<IUniItemFactory<CellItemView>>();
             var camera = context.Get<Camera>();
             var gameField = context.Get<ConquerGameField>();
             var playerModel = context.Get<ConquerPlayerModel>();
@@ -37,13 +36,13 @@ namespace Conquer.States.Game
 
                     if (!hitResult || gameField.transform != hit.transform)
                     {
-
                         continue;
                     }
 
                     var turn = playerModel.TurnModel.Value;
                     turn.SelectedCell.Value = gameField.GetCellPosition(hit.point);
-
+                    turn.GameFieldHit.Value = hit;
+                    
                 }
                 else
                 {

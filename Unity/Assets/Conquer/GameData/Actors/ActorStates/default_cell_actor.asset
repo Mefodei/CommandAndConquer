@@ -13,7 +13,57 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodes:
   - {fileID: 114998506114150740}
-  RootNode: {fileID: 114998506114150740}
+  - {fileID: 114214653494799464}
+  RootNode: {fileID: 114214653494799464}
+--- !u!114 &114214653494799464
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fd87a3ca9971ca409605de5646288ee, type: 3}
+  m_Name: init
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -328, y: -984}
+  ports:
+    keys:
+    - InputContext
+    - OutputContext
+    values:
+    - _fieldName: InputContext
+      _node: {fileID: 114214653494799464}
+      _typeQualifiedName: UniStateMachine.Nodes.UniStateNodePort, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 0
+      _connectionType: 0
+      _dynamic: 0
+    - _fieldName: OutputContext
+      _node: {fileID: 114214653494799464}
+      _typeQualifiedName: UniStateMachine.Nodes.UniStateNodePort, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: InputContext
+        node: {fileID: 114998506114150740}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _dynamic: 0
+  _routineType: 0
+  _validator: {fileID: 0}
+  InputContext:
+    _validatorData:
+      Validator: {fileID: 0}
+      AllowNullContext: 0
+      DefaultValidationValue: 1
+  OutputContext:
+    _validatorData:
+      Validator: {fileID: 0}
+      AllowNullContext: 0
+      DefaultValidationValue: 1
 --- !u!114 &114998506114150740
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26,7 +76,7 @@ MonoBehaviour:
   m_Name: put into field
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -264, y: -872}
+  position: {x: -40, y: -936}
   ports:
     keys:
     - InputContext
@@ -36,7 +86,10 @@ MonoBehaviour:
       _node: {fileID: 114998506114150740}
       _typeQualifiedName: UniStateMachine.Nodes.UniStateNodePort, Assembly-CSharp,
         Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-      connections: []
+      connections:
+      - fieldName: OutputContext
+        node: {fileID: 114214653494799464}
+        reroutePoints: []
       _direction: 0
       _connectionType: 0
       _dynamic: 0
@@ -49,7 +102,6 @@ MonoBehaviour:
       _connectionType: 0
       _dynamic: 0
   _routineType: 0
-  _allowRestart: 1
   _validator: {fileID: 0}
   InputContext:
     _validatorData:

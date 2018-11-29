@@ -16,10 +16,12 @@ namespace Conquer.States.CellActor
 			var mode = context.Get<CellItemModel>();
 
 			var turn = playerModel.TurnModel.Value;
-			
+			var hit = turn.GameFieldHit.Value;
+			var cellPosition = turn.SelectedCell.Value;
+		
 			while (playerModel.IsTurnActive.Value)
 			{
-				cellView.transform.position = turn.SelectedCell.Value;
+				cellView.transform.position = cellPosition;
 				yield return null;
 			}
 			

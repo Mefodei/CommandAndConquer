@@ -58,7 +58,6 @@ MonoBehaviour:
       _connectionType: 0
       _dynamic: 0
   _routineType: 0
-  _allowRestart: 0
   _validator: {fileID: 0}
   InputContext:
     _validatorData:
@@ -111,7 +110,6 @@ MonoBehaviour:
       _connectionType: 0
       _dynamic: 0
   _routineType: 0
-  _allowRestart: 0
   _validator: {fileID: 0}
   InputContext:
     _validatorData:
@@ -162,7 +160,6 @@ MonoBehaviour:
       _connectionType: 0
       _dynamic: 0
   _routineType: 0
-  _allowRestart: 0
   _validator: {fileID: 0}
   InputContext:
     _validatorData:
@@ -215,7 +212,6 @@ MonoBehaviour:
       _connectionType: 0
       _dynamic: 0
   _routineType: 0
-  _allowRestart: 0
   _validator: {fileID: 0}
   InputContext:
     _validatorData:

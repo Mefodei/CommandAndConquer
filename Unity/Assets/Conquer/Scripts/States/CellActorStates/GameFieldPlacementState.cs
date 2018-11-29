@@ -28,9 +28,13 @@ namespace Conquer.States.CellActor
 				var cellPosition = turn.SelectedCell.Value;
 				var cell = gameField.GetCell(cellPosition);
 				var size = new Vector2Int(cellInfo.Width, cellInfo.Height);
-				if (gameField.Validate(cell.Position, size))
+			    var result = gameField.Validate(cell.Position, size);
+
+			    var cellViewPosition = gameField.GetCellPosition(result.position);
+			    cellView.transform.position = cellViewPosition;
+                if (result.valid)
 				{
-					cellView.transform.position = cellPosition;
+
 				}
 				
 				yield return null;

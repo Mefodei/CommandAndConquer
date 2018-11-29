@@ -35,6 +35,17 @@ namespace Assets.Conquer.Scripts.Field
             UpdateGameField();
         }
 
+        public Vector3 GetCellPosition(Vector2Int position)
+        {
+            var cellData = _fieldModel[position.y, position.x];
+            var cellPosition = cellData.Position;
+
+            var index = cellPosition.y * _fieldModel.Size.x + cellPosition.x;
+            index = Mathf.Clamp(index, 0, _cellViews.Count - 1);
+
+            return _cellViews[index].transform.position + _cellItemsOffset - _pivotOffset;
+        }
+
         public Vector3 GetCellPosition(Vector3 position)
         {
 
@@ -42,43 +53,15 @@ namespace Assets.Conquer.Scripts.Field
             if (cellData == ConquerFieldModel.DefaultCell)
                 return Vector3.zero;
 
-            var cellPosition = cellData.Position;
-
-            var index = cellPosition.y * _fieldModel.Size.x + cellPosition.x;
-            index = Mathf.Clamp(index, 0, _cellViews.Count - 1);
-
-            return _cellViews[index].transform.position + _cellItemsOffset - _pivotOffset;
+            return GetCellPosition(cellData.Position);
 
         }
 
-        public bool Validate(Vector2Int position, Vector2Int size)
+        public (Vector2Int position,bool valid) Validate(Vector2Int position, Vector2Int size)
         {
-            var validation = ValidateIndex(position.x, position.y);
-            var max = position + size;
-            validation = validation && ValidateIndex(max.x, max.y);
-
-            if (!validation)
-                return false;
-
-            for (var column = position.x; column < max.x; column++)
-            {
-                for (var row = position.y; row < max.y; row++)
-                {
-                    var cell = _fieldModel[row,column];
-                    if (cell.Owner != 0)
-                        return false;
-                }
-            }
-
-            return true;
+            return _fieldModel.Validate(position, size);
         }
 
-        public bool ValidateIndex(int x, int y)
-        {
-            var size = _fieldModel.Size;
-            return x.IsInRange(new Vector2Int(0, size.x)) &&
-                   y.IsInRange(new Vector2Int(0, size.y));
-        }
 
         public CellData GetCell(Vector3 position)
         {

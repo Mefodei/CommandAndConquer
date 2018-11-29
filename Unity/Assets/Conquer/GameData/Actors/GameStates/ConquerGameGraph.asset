@@ -17,6 +17,8 @@ MonoBehaviour:
   - {fileID: 114982738394473808}
   - {fileID: 114753870107637998}
   - {fileID: 114161863638252576}
+  - {fileID: 114716289492134308}
+  - {fileID: 114252570727128266}
   RootNode: {fileID: 114554049069220968}
 --- !u!114 &114161863638252576
 MonoBehaviour:
@@ -30,7 +32,7 @@ MonoBehaviour:
   m_Name: Uni Ui Node
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -72, y: -760}
+  position: {x: -104, y: -776}
   ports:
     keys:
     - InputContext
@@ -51,7 +53,13 @@ MonoBehaviour:
       _node: {fileID: 114161863638252576}
       _typeQualifiedName: UniStateMachine.Nodes.UniStateNodePort, Assembly-CSharp,
         Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-      connections: []
+      connections:
+      - fieldName: InputContext
+        node: {fileID: 114716289492134308}
+        reroutePoints: []
+      - fieldName: InputContext
+        node: {fileID: 114252570727128266}
+        reroutePoints: []
       _direction: 1
       _connectionType: 0
       _dynamic: 0
@@ -68,6 +76,56 @@ MonoBehaviour:
       AllowNullContext: 0
       DefaultValidationValue: 1
   UiView: {fileID: 114244016296724064, guid: e20e12e8fd540fc4fb995d231bdfa524, type: 2}
+--- !u!114 &114252570727128266
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2998dc7ebf4686240832bf795ef96102, type: 3}
+  m_Name: Uni Ui Node
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 280, y: -920}
+  ports:
+    keys:
+    - InputContext
+    - OutputContext
+    values:
+    - _fieldName: InputContext
+      _node: {fileID: 114252570727128266}
+      _typeQualifiedName: UniStateMachine.Nodes.UniStateNodePort, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: OutputContext
+        node: {fileID: 114161863638252576}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _dynamic: 0
+    - _fieldName: OutputContext
+      _node: {fileID: 114252570727128266}
+      _typeQualifiedName: UniStateMachine.Nodes.UniStateNodePort, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _dynamic: 0
+  _routineType: 0
+  _validator: {fileID: 0}
+  InputContext:
+    _validatorData:
+      Validator: {fileID: 0}
+      AllowNullContext: 0
+      DefaultValidationValue: 1
+  OutputContext:
+    _validatorData:
+      Validator: {fileID: 0}
+      AllowNullContext: 0
+      DefaultValidationValue: 1
+  UiView: {fileID: 0}
 --- !u!114 &114252671563531540
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -138,7 +196,7 @@ MonoBehaviour:
   m_Name: Initialize Game State
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -616, y: -344}
+  position: {x: -616, y: -328}
   ports:
     keys:
     - InputContext
@@ -176,6 +234,56 @@ MonoBehaviour:
       AllowNullContext: 0
       DefaultValidationValue: 1
   _fieldInfo: {fileID: 11400000, guid: 71642156e47234641893a5e886aaef21, type: 2}
+--- !u!114 &114716289492134308
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2998dc7ebf4686240832bf795ef96102, type: 3}
+  m_Name: Uni Ui Node
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -440, y: -920}
+  ports:
+    keys:
+    - InputContext
+    - OutputContext
+    values:
+    - _fieldName: InputContext
+      _node: {fileID: 114716289492134308}
+      _typeQualifiedName: UniStateMachine.Nodes.UniStateNodePort, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: OutputContext
+        node: {fileID: 114161863638252576}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _dynamic: 0
+    - _fieldName: OutputContext
+      _node: {fileID: 114716289492134308}
+      _typeQualifiedName: UniStateMachine.Nodes.UniStateNodePort, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _dynamic: 0
+  _routineType: 0
+  _validator: {fileID: 0}
+  InputContext:
+    _validatorData:
+      Validator: {fileID: 0}
+      AllowNullContext: 0
+      DefaultValidationValue: 1
+  OutputContext:
+    _validatorData:
+      Validator: {fileID: 0}
+      AllowNullContext: 0
+      DefaultValidationValue: 1
+  UiView: {fileID: 0}
 --- !u!114 &114753870107637998
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -237,7 +345,7 @@ MonoBehaviour:
   m_Name: Update Turn Data State
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 56, y: -488}
+  position: {x: 88, y: -504}
   ports:
     keys:
     - InputContext

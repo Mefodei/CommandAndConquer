@@ -47,6 +47,37 @@ namespace Assets.Conquer.Scripts.Models
             }
         }
 
+        public bool ValidateIndex(int x, int y)
+        {
+            var size = Size;
+            return x.IsInRange(new Vector2Int(0, size.x)) &&
+                   y.IsInRange(new Vector2Int(0, size.y));
+        }
+
+        public (Vector2Int position,bool canBePlaced) Validate(Vector2Int position, Vector2Int size)
+        {
+
+            var maxPosition = position + size;
+            var min = new Vector2Int(0,0);
+            var max = new Vector2Int(Size.x, Size.y);
+            maxPosition.Clamp(min, max);
+            var resultPosition = maxPosition - size;
+            resultPosition.Clamp(min, max);
+
+            for (var column = position.x; column < max.x; column++)
+            {
+                for (var row = position.y; row < max.y; row++)
+                {
+                    var cell = this[row, column];
+                    if (cell.Owner != 0)
+                        return (resultPosition,false);
+                }
+            }
+
+            return (resultPosition, true);
+        }
+
+
         private void CreateCells()
         {
             for (var i = 0; i < Size.y; i++)

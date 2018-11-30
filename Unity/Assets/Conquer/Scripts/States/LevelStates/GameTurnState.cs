@@ -9,13 +9,8 @@ namespace Conquer.States.Game
 		protected override IEnumerator ExecuteState(IContext context)
 		{
 
-			while (IsActive(context))
-			{
-				
+			yield return base.ExecuteState(context);
 
-				yield return null;
-			}
-			
 		}
 	}
 }

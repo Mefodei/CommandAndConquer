@@ -18,20 +18,15 @@ namespace Conquer.States.Game
 			var disposable = context.Receive<MakeTheRollCubesMessage>().Subscribe(x => OnMakeRoll(context));
 			lifeTime.AddDispose(disposable);
 			
-			
-			
 			return base.ExecuteState(context);
-		}
-
-		protected override void OnExit(IContext context)
-		{
-			base.OnExit(context);
 		}
 
 
 		private void OnMakeRoll(IContext context)
 		{
 			var gameData = context.Get<ConquerGameData>();
+			var playerModel = context.Get<ConquerPlayerModel>();
+			
 			var field = gameData.GameFieldInfo;
 			
 			var widthSize = Random.Range(field.CellWidthLimit.x,field.CellWidthLimit.y);
@@ -44,6 +39,12 @@ namespace Conquer.States.Game
 			};
 
 			context.Publish(rollResult);
+			
+			var turn = playerModel.TurnModel.Value;
+			playerModel.Turn.Value++;
+			playerModel.IsTurnActive.Value = true;
+			turn.ItemSize.Value = new Vector2Int(widthSize,heightSize);
+			
 		}
 	}
 }

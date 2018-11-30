@@ -2,5 +2,8 @@
 
 namespace Conquer.Messages
 {
-	public struct MakeTheRollCubesMessage{ }
+	public struct MakeTheRollCubesMessage
+	{
+		public int PlayerId;
+	}
 }

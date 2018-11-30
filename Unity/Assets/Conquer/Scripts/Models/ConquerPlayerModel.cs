@@ -6,6 +6,8 @@ namespace Assets.Conquer.Scripts.Models
     public class ConquerPlayerModel
     {
 
+        public IntReactiveProperty Id = new IntReactiveProperty(1);
+        
         public ReactiveProperty<int> Turn = new ReactiveProperty<int>();
         
         public ReactiveProperty<string> Name = new ReactiveProperty<string>();

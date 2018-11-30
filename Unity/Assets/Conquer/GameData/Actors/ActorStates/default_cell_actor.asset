@@ -14,6 +14,7 @@ MonoBehaviour:
   nodes:
   - {fileID: 114998506114150740}
   - {fileID: 114214653494799464}
+  - {fileID: 114977970436781944}
   RootNode: {fileID: 114214653494799464}
 --- !u!114 &114214653494799464
 MonoBehaviour:
@@ -64,6 +65,55 @@ MonoBehaviour:
       Validator: {fileID: 0}
       AllowNullContext: 0
       DefaultValidationValue: 1
+--- !u!114 &114977970436781944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e591bb2a921859e4783ef53f1fe685ce, type: 3}
+  m_Name: Cell Actor Commit Selection State
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 184, y: -1032}
+  ports:
+    keys:
+    - InputContext
+    - OutputContext
+    values:
+    - _fieldName: InputContext
+      _node: {fileID: 114977970436781944}
+      _typeQualifiedName: UniStateMachine.Nodes.UniStateNodePort, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: OutputContext
+        node: {fileID: 114998506114150740}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _dynamic: 0
+    - _fieldName: OutputContext
+      _node: {fileID: 114977970436781944}
+      _typeQualifiedName: UniStateMachine.Nodes.UniStateNodePort, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _dynamic: 0
+  _routineType: 0
+  _validator: {fileID: 0}
+  InputContext:
+    _validatorData:
+      Validator: {fileID: 0}
+      AllowNullContext: 0
+      DefaultValidationValue: 1
+  OutputContext:
+    _validatorData:
+      Validator: {fileID: 0}
+      AllowNullContext: 0
+      DefaultValidationValue: 1
 --- !u!114 &114998506114150740
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -76,7 +126,7 @@ MonoBehaviour:
   m_Name: put into field
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -40, y: -936}
+  position: {x: -72, y: -1064}
   ports:
     keys:
     - InputContext
@@ -97,7 +147,10 @@ MonoBehaviour:
       _node: {fileID: 114998506114150740}
       _typeQualifiedName: UniStateMachine.Nodes.UniStateNodePort, Assembly-CSharp,
         Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-      connections: []
+      connections:
+      - fieldName: InputContext
+        node: {fileID: 114977970436781944}
+        reroutePoints: []
       _direction: 1
       _connectionType: 0
       _dynamic: 0

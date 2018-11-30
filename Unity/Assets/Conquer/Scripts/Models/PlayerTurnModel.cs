@@ -1,4 +1,5 @@
-﻿using UnityTools.ActorEntityModel;
+﻿using Assets.Conquer.Scripts.Models;
+using UnityTools.ActorEntityModel;
 using UniRx;
 using UnityEngine;
 
@@ -12,7 +13,7 @@ namespace Conquer.Models
     
         public ReactiveProperty<float> TimeLeft = new ReactiveProperty<float>();
         
-        public ReactiveProperty<Vector3> SelectedCell = new ReactiveProperty<Vector3>();
+        public ReactiveProperty<CellData> SelectedCell = new ReactiveProperty<CellData>();
         
         public ReactiveProperty<RaycastHit> GameFieldHit = new ReactiveProperty<RaycastHit>();
         

@@ -9,47 +9,37 @@ using UnityEngine;
 
 namespace Conquer.States.CellActor
 {
-	public class GameFieldPlacementState : UniNode 
+	public class CellItemSelectionState : UniNode 
 	{
 		protected override IEnumerator ExecuteState(IContext context)
 		{
+			yield return base.ExecuteState(context);
+			
 			var gameField = context.Get<ConquerGameField>();
 			var playerModel = context.Get<ConquerPlayerModel>();
 			var cellView = context.Get<CellItemView>();
 			var model = context.Get<CellItemModel>();
-			var cellInfo = model.CellInfo;
 			
+			var cellInfo = model.CellInfo;
 			var turn = playerModel.TurnModel.Value;
-			var hit = turn.GameFieldHit.Value;
 		
-			while (playerModel.IsTurnActive.Value)
+			while (model.Fixed.Value == false)
 			{
 
-				var cellPosition = turn.SelectedCell.Value;
-				var cell = gameField.GetCell(cellPosition);
+				var cell = turn.SelectedCell.Value;
 				var size = new Vector2Int(cellInfo.Width, cellInfo.Height);
-			    var result = gameField.Validate(cell.Position, size);
+				var rect = new RectInt(cell.Position, size);
+			    var result = gameField.Validate(rect);
 
-			    var cellViewPosition = gameField.GetCellPosition(result.position);
+			    var cellViewPosition = gameField.GetCellPosition(result.rect.position);
 			    cellView.transform.position = cellViewPosition;
 				cellView.gameObject.SetActive(true);
-				
-                if (result.valid)
-				{
-
-				}
 				
 				yield return null;
 
 			}
 			
-			yield return base.ExecuteState(context);
-			
 		}
 
-		protected override void OnExit(IContext context)
-		{
-			base.OnExit(context);
-		}
 	}
 }

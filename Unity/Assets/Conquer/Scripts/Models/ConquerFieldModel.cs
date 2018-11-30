@@ -45,6 +45,7 @@ namespace Assets.Conquer.Scripts.Models
                 return _cells[index];
 
             }
+            
         }
 
         public bool ValidateIndex(int x, int y)
@@ -54,27 +55,41 @@ namespace Assets.Conquer.Scripts.Models
                    y.IsInRange(new Vector2Int(0, size.y));
         }
 
-        public (Vector2Int position,bool canBePlaced) Validate(Vector2Int position, Vector2Int size)
+        public (RectInt position,bool canBePlaced) Validate(RectInt rect)
         {
-
-            var maxPosition = position + size;
+            var maxPosition = rect.max;
             var min = new Vector2Int(0,0);
             var max = new Vector2Int(Size.x, Size.y);
             maxPosition.Clamp(min, max);
-            var resultPosition = maxPosition - size;
+            var resultPosition = maxPosition - rect.size;
             resultPosition.Clamp(min, max);
-
-            for (var column = position.x; column < max.x; column++)
+            var itemRect = new RectInt(resultPosition,rect.size);
+            
+            for (var column = rect.x; column < max.x; column++)
             {
-                for (var row = position.y; row < max.y; row++)
+                for (var row = rect.y; row < max.y; row++)
                 {
                     var cell = this[row, column];
                     if (cell.Owner != 0)
-                        return (resultPosition,false);
+                        return (itemRect,false);
                 }
             }
 
-            return (resultPosition, true);
+            return (itemRect, true);
+        }
+
+
+        public void UpdateCellsData(RectInt rect, int value)
+        {
+            var max = rect.max;
+            for (var column = rect.x; column < max.x; column++)
+            {
+                for (var row = rect.y; row < max.y; row++)
+                {
+                    var cell = this[row, column];
+                    cell.Owner = value;
+                }
+            }
         }
 
 

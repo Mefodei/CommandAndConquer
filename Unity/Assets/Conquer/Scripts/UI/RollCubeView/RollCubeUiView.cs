@@ -43,6 +43,11 @@ namespace Assets.Conquer.Scripts.UI
             Context.Publish(new MakeTheRollCubesMessage());
         }
 
+        public void Commit()
+        {
+            Context.Publish(new CommitCellSelectionMessage());
+        }
+        
         #region protected
         
         protected override void Activate()

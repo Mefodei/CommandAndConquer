@@ -1,10 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public struct EndOfTurnMessage
+﻿namespace Conquer.Messages
 {
+	public struct EndOfTurnMessage
+	{
 
-	public int PlayerId;
+		public int PlayerId;
 
+	}
 }

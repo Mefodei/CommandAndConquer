@@ -21,28 +21,12 @@ namespace Conquer.States.Game
 
             var actor = cellItemFactory.Create(0, size.x,size.y);
             
-            _context.AddValue(context,actor);
-            
             actor.Context.Add(playerModel);
             actor.Context.Add(gameField);
             actor.SetEnabled(true);
-
-            while (IsActive(context))
-            {
-
-                yield return null;
-
-            }
             
             yield return base.ExecuteState(context);
         }
 
-        protected override void OnExit(IContext context)
-        {
-            var actor = _context.Get<Actor>(context);
-            actor?.Despawn();
-
-            base.OnExit(context);
-        }
     }
 }

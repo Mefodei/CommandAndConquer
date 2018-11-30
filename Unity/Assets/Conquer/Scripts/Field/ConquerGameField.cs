@@ -57,12 +57,21 @@ namespace Assets.Conquer.Scripts.Field
 
         }
 
-        public (Vector2Int position,bool valid) Validate(Vector2Int position, Vector2Int size)
+        public (RectInt rect,bool valid) Validate(RectInt rect)
         {
-            return _fieldModel.Validate(position, size);
+            return _fieldModel.Validate(rect);
         }
 
+        public void UpdateCellData(RectInt rect, int value)
+        {
+            _fieldModel.UpdateCellsData(rect, value);
+        }
 
+        public CellData GetCell(int row, int column)
+        {
+            return _fieldModel[row, column];
+        }
+        
         public CellData GetCell(Vector3 position)
         {
             var cellPosition = position - _pivot.position;

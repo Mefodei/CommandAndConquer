@@ -29,6 +29,9 @@ namespace Conquer.States.Game
             var playerModel = new ConquerPlayerModel();
             var fieldCellFactory = new GameFieldCellFactory(_fieldInfo.CellsMap);
 
+            var turn = playerModel.TurnModel.Value;
+            turn.SelectedCell.Value = gameField.GetCell(0, 0);
+            
             context.Add<IGameFieldCellFactory>(fieldCellFactory);
             context.Add(_fieldInfo);
             context.Add(playerModel);

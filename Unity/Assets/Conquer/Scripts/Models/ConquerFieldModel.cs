@@ -65,9 +65,9 @@ namespace Assets.Conquer.Scripts.Models
             resultPosition.Clamp(min, max);
             var itemRect = new RectInt(resultPosition,rect.size);
             
-            for (var column = rect.x; column < max.x; column++)
+            for (var column = itemRect.x; column < itemRect.xMax; column++)
             {
-                for (var row = rect.y; row < max.y; row++)
+                for (var row = itemRect.y; row < itemRect.yMax; row++)
                 {
                     var cell = this[row, column];
                     if (cell.Owner != 0)
@@ -79,7 +79,7 @@ namespace Assets.Conquer.Scripts.Models
         }
 
 
-        public void UpdateCellsData(RectInt rect, int value)
+        public void UpdateOwnerAtRange(RectInt rect, int value)
         {
             var max = rect.max;
             for (var column = rect.x; column < max.x; column++)
@@ -92,6 +92,11 @@ namespace Assets.Conquer.Scripts.Models
             }
         }
 
+        public void SetOwner(int row, int column, int owner)
+        {
+            var cell = this[row, column];
+            cell.Owner = owner;
+        }
 
         private void CreateCells()
         {

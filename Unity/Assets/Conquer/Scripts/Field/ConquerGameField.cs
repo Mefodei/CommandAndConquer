@@ -64,7 +64,7 @@ namespace Assets.Conquer.Scripts.Field
 
         public void UpdateCellData(RectInt rect, int value)
         {
-            _fieldModel.UpdateCellsData(rect, value);
+            _fieldModel.UpdateOwnerAtRange(rect, value);
         }
 
         public CellData GetCell(int row, int column)

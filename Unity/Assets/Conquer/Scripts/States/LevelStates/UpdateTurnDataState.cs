@@ -4,6 +4,7 @@ using Assets.Tools.UnityTools.Interfaces;
 using Conquer.Messages;
 using UniStateMachine;
 using UnityEngine;
+using UniRx;
 
 namespace Conquer.States.Game
 {
@@ -12,11 +13,14 @@ namespace Conquer.States.Game
 		
 		protected override IEnumerator ExecuteState(IContext context)
 		{
-			var gameModel = context.Get<ConquerGameData>();
 			var playerModel = context.Get<ConquerPlayerModel>();
-			var gameInfo = gameModel.GameFieldInfo;
-            var turnData = playerModel.TurnModel.Value;
+			var lifeTime = GetLifeTime(context);
+			
+			var disposable = context.Receive<EndOfTurnMessage>().
+				Subscribe(x => playerModel.IsTurnActive.Value = false);
 
+			lifeTime.AddDispose(disposable);
+			
 			return base.ExecuteState(context);
 		}
 

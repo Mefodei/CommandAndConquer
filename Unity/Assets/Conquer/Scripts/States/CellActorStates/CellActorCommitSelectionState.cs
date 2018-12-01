@@ -45,6 +45,15 @@ namespace Conquer.States.CellActor
 			{
 				gameField.UpdateCellData(result.rect,player.Id.Value);
 				model.Fixed.Value = true;
+				model.Column.Value = result.rect.x;
+				model.Row.Value = result.rect.y;
+				
+				var cellPlaced = new CellActorPlacedMessage()
+				{
+					Cell = result.rect.min,
+					ActorId = model.CellId.Value,
+				};
+				context.Publish(cellPlaced);
 			}
 			
 		}

@@ -77,7 +77,7 @@ MonoBehaviour:
   m_Name: fix field position
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 184, y: -1032}
+  position: {x: 168, y: -984}
   ports:
     keys:
     - InputContext
@@ -126,7 +126,7 @@ MonoBehaviour:
   m_Name: select cell
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -72, y: -1064}
+  position: {x: -72, y: -1112}
   ports:
     keys:
     - InputContext

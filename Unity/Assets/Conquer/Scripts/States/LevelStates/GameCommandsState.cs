@@ -15,12 +15,20 @@ namespace Conquer.States.Game
 		{
 
 			var lifeTime = GetLifeTime(context);
+			
 			var disposable = context.Receive<MakeTheRollCubesMessage>().Subscribe(x => OnMakeRoll(context));
+			lifeTime.AddDispose(disposable);
+			
+			disposable = context.Receive<CellActorPlacedMessage>().Subscribe(x => OnCellItemPlaced(context,x));
 			lifeTime.AddDispose(disposable);
 			
 			return base.ExecuteState(context);
 		}
 
+		private void OnCellItemPlaced(IContext context,CellActorPlacedMessage message)
+		{
+			context.Publish(new EndOfTurnMessage());
+		}
 
 		private void OnMakeRoll(IContext context)
 		{

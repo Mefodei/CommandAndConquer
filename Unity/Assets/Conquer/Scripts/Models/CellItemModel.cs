@@ -7,14 +7,19 @@ using UnityEngine;
 
 namespace Conquer.Models
 {
-	public class CellItemModel : ActorModel, IPoolable
+	public class CellItemModel : ActorModel
 	{
+		private static int _cellId;
 		
 		private CellItemInfo _info;
 
 		public void Initialize(CellItemInfo info)
 		{
+			Initialize();
+			
 			_info = info;
+			
+			CellId.Value = ++_cellId;
 			View.Value = _info.View.Spawn();
 		    Behaviour.Value = _info.Behaviour;
 		}
@@ -23,12 +28,14 @@ namespace Conquer.Models
 	    {
 
             _info = null;
+		    Id.Value = 0;
             Column.Value = 0;
 	        Row.Value = 0;
 	        Fixed.Value = false;
 	        View.Value?.Despawn();
 	        View.Value = null;
-
+		    CellId.Value = 0;
+		    
 	        base.Release();
 
 	    }
@@ -43,14 +50,17 @@ namespace Conquer.Models
 
 	    }
 
+		
 	    public CellItemInfo CellInfo => _info;
 
-		public IntReactiveProperty Column { get; } = new IntReactiveProperty();
+		public IntReactiveProperty CellId  = new IntReactiveProperty();
+		
+		public IntReactiveProperty Column = new IntReactiveProperty();
 
-		public IntReactiveProperty Row { get; } = new IntReactiveProperty();
+		public IntReactiveProperty Row = new IntReactiveProperty();
 
-		public BoolReactiveProperty Fixed { get; } = new BoolReactiveProperty(false);
-
-        public ReactiveProperty<CellItemView> View { get; } = new ReactiveProperty<CellItemView>();
+		public BoolReactiveProperty Fixed = new BoolReactiveProperty(false);
+		
+        public ReactiveProperty<CellItemView> View = new ReactiveProperty<CellItemView>();
 	}
 }

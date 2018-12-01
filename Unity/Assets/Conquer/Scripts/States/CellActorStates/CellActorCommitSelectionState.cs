@@ -18,10 +18,12 @@ namespace Conquer.States.CellActor
 			var model = context.Get<CellItemModel>();
 
 			var disposable = context.Receive<CommitCellSelectionMessage>().
+				TakeWhile(x => model.Fixed.Value == false).
 				Subscribe(x => CommitPosition(context,x));
+			
 			GetLifeTime(context).AddDispose(disposable);
 
-			while (!model.Fixed.Value )
+			while (!model.Fixed.Value)
 			{
 				yield return null;
 			}

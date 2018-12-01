@@ -10,9 +10,9 @@ using UnityEngine;
 
 namespace Assets.Scripts
 {
-    public class BootLoader : MonoBehaviour {
+    public class BootLoader : MonoBehaviour 
+    {
 
-        private IDisposable _gameDisposable;
         private IContext _context;
         private IDisposableItem _graphDisposableItem;
 
@@ -28,30 +28,24 @@ namespace Assets.Scripts
         private void Start()
         {
             _context = new EntityObject();
-
             _context.Add(_conquerGameField);
             _context.Add(_gameCamera);
 
             DontDestroyOnLoad(gameObject);
-
             StartGameBehaviour();
         }
 
         private void StartGameBehaviour()
         {
             _graphDisposableItem = GameStateBehaviour.Execute(_context).RunWithSubRoutines();
+            _context.LifeTime.AddDispose(_graphDisposableItem);
         }
 
         private void OnDisable()
         {
-            _graphDisposableItem?.Dispose();
+            _context.Release();
             _graphDisposableItem = null;
             GameStateBehaviour.Dispose();
-        }
-
-        private void OnDestroy()
-        {
-            _gameDisposable?.Dispose();
         }
 
     }

@@ -74,7 +74,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e591bb2a921859e4783ef53f1fe685ce, type: 3}
-  m_Name: Cell Actor Commit Selection State
+  m_Name: fix field position
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
   position: {x: 184, y: -1032}
@@ -123,7 +123,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8e86e4c959beff04caebdd9e10025437, type: 3}
-  m_Name: put into field
+  m_Name: select cell
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
   position: {x: -72, y: -1064}

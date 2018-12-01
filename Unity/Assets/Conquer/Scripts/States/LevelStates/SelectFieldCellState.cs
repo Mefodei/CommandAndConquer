@@ -20,6 +20,8 @@ namespace Conquer.States.Game
             var size = turn.ItemSize.Value;
 
             var actor = cellItemFactory.Create(0, size.x,size.y);
+            //add actor to outer context
+            context.LifeTime.AddCleanUpAction(actor.Release);
             
             actor.Context.Add(playerModel);
             actor.Context.Add(gameField);

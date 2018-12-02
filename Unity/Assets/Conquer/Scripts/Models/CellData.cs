@@ -10,6 +10,8 @@ namespace Assets.Conquer.Scripts.Models
 
         public int Owner;
 
+        public int Type;
+
         public int Cost = 1;
 
     }

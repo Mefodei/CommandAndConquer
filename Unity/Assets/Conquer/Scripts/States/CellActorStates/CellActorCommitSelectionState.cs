@@ -41,11 +41,11 @@ namespace Conquer.States.CellActor
 			var cellInfo = model.CellInfo;
 			
 			var size = new Vector2Int(cellInfo.Width, cellInfo.Height);
-			var result = gameField.Validate(new RectInt(turn.SelectedCell.Value.Position, size));
+			var result = gameField.Validate(new RectInt(turn.SelectedCell.Value.Position, size),player.Id.Value);
 
 			if (result.valid)
 			{
-				gameField.UpdateCellData(result.rect,player.Id.Value);
+				gameField.UpdateCellDataAtRange(result.rect,player.Id.Value);
 				model.Fixed.Value = true;
 				model.Column.Value = result.rect.x;
 				model.Row.Value = result.rect.y;

@@ -57,12 +57,12 @@ namespace Assets.Conquer.Scripts.Field
 
         }
 
-        public (RectInt rect,bool valid) Validate(RectInt rect)
+        public (RectInt rect,bool valid) Validate(RectInt rect,int owner)
         {
-            return _fieldModel.Validate(rect);
+            return _fieldModel.Validate(rect,owner);
         }
 
-        public void UpdateCellData(RectInt rect, int value)
+        public void UpdateCellDataAtRange(RectInt rect, int value)
         {
             _fieldModel.UpdateOwnerAtRange(rect, value);
         }

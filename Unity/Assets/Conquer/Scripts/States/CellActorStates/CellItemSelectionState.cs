@@ -29,7 +29,7 @@ namespace Conquer.States.CellActor
 				var cell = turn.SelectedCell.Value;
 				var size = new Vector2Int(cellInfo.Width, cellInfo.Height);
 				var rect = new RectInt(cell.Position, size);
-			    var result = gameField.Validate(rect);
+			    var result = gameField.Validate(rect,playerModel.Id.Value);
 
 			    var cellViewPosition = gameField.GetCellPosition(result.rect.position);
 			    cellView.transform.position = cellViewPosition;
